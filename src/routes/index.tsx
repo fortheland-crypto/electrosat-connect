@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Hero } from "@/components/sections/Hero";
-import { Catalog } from "@/components/sections/Catalog";
 import { SatelliteServices } from "@/components/sections/SatelliteServices";
+import { ShopPreviewBanner } from "@/components/sections/ShopPreviewBanner";
 import { ContactsBlock } from "@/components/sections/ContactsBlock";
 import { site } from "@/config/site";
 
@@ -48,10 +48,10 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="space-y-12 pb-8">
+    <div className="space-y-12 pb-12">
       <Hero />
-      <Catalog />
       <SatelliteServices />
+      <ShopPreviewBanner />
       <ContactsBlock />
     </div>
   );
