@@ -12,12 +12,14 @@ export const site = {
   whatsappNumber: "77052202575",
   instagram: "@electro_sat_arman",
   instagramUrl: "https://instagram.com/electro_sat_arman",
+  dgisUrl:
+    "https://2gis.kz/satpaev/search/%D0%A2%D0%94%20%D0%90%D1%80%D0%BC%D0%B0%D0%BD%20%D0%9C%D0%B0%D0%BD%D0%B3%D0%B8%D0%BB%D0%B8%D0%BA%20%D0%95%D0%BB%2020%D0%90",
   addressShort: "ТД «Арман», г. Сатпаев",
   addressFull:
     "г. Сатпаев, ТД «Арман», ул. Мангилик Ел 20А (бывшая Комарова 20А), цокольный этаж",
   workHours: "Пн: Выходной | Вт–Сб: 11:00–19:00 | Вс: 11:00–17:00",
   mapEmbed:
-    "https://www.google.com/maps?q=%D0%A1%D0%B0%D1%82%D0%BF%D0%B0%D0%B5%D0%B2%20%D0%9C%D0%B0%D0%BD%D0%B3%D0%B8%D0%BB%D0%B8%D0%BA%20%D0%95%D0%BB%2020%D0%90&output=embed",
+    "https://2gis.kz/satpaev/search/%D0%A2%D0%94%20%D0%90%D1%80%D0%BC%D0%B0%D0%BD%20%D0%9C%D0%B0%D0%BD%D0%B3%D0%B8%D0%BB%D0%B8%D0%BA%20%D0%95%D0%BB%2020%D0%90",
 } as const;
 
 export const defaultWhatsappMessage =
@@ -38,8 +40,7 @@ export const nav = [
   { label: "Главная", to: "/" },
   { label: "Спутниковое ТВ", to: "/satellite-tv" },
   { label: "Видеонаблюдение", to: "/cctv" },
-  { label: "Магазин", to: "/shop" },
-  { label: "Наши работы", to: "/works" },
+  { label: "Каталог товаров", to: "/shop" },
   { label: "О компании", to: "/about" },
   { label: "Контакты", to: "/contacts" },
 ] as const;
