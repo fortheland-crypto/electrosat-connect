@@ -1,20 +1,14 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
 import { Hero } from "@/components/sections/Hero";
-import { Directions } from "@/components/sections/Directions";
-import { CctvProcess } from "@/components/sections/CctvProcess";
+import { Catalog } from "@/components/sections/Catalog";
 import { SatelliteServices } from "@/components/sections/SatelliteServices";
-import { Advantages } from "@/components/sections/Advantages";
-import { WorksGallery } from "@/components/sections/WorksGallery";
-import { LeadForm } from "@/components/sections/LeadForm";
-import { FaqSection } from "@/components/sections/FaqSection";
 import { ContactsBlock } from "@/components/sections/ContactsBlock";
 import { site } from "@/config/site";
 
-const title =
-  "ElectroSat — спутниковое ТВ и видеонаблюдение в Сатпаеве и Жезказгане";
+const title = "ElectroSat — спутниковое ТВ и видеонаблюдение в Сатпаеве";
 const description =
-  "Установка и настройка спутникового телевидения, монтаж видеонаблюдения в Сатпаеве и Жезказгане. Выезд мастера, магазин оборудования в ТД «Арман».";
+  "Спутниковое ТВ, видеонаблюдение, пульты, кабели и оборудование в Сатпаеве и Жезказгане. Выезд мастера, магазин в ТД «Арман».";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -54,21 +48,11 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <>
+    <div className="space-y-12 pb-8">
       <Hero />
-      <Directions />
-      <CctvProcess />
+      <Catalog />
       <SatelliteServices />
-      <WorksGallery limit={3} />
-      <Advantages />
-      <LeadForm />
-      <FaqSection />
       <ContactsBlock />
-      <div className="mx-auto max-w-7xl px-4 pb-6 text-sm text-muted-foreground lg:px-8">
-        Смотрите также: <Link to="/shop" className="text-primary hover:underline">каталог магазина</Link>
-        {" · "}
-        <Link to="/about" className="text-primary hover:underline">о компании</Link>
-      </div>
-    </>
+    </div>
   );
 }
