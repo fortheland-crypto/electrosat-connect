@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Bot, MessageCircle, Send, Sparkles, X, Loader2, Phone, RotateCcw } from "lucide-react";
+import { Bot, MessageCircle, Send, Sparkles, X, Loader2, Phone, RotateCcw, Volume2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { site, waLink } from "@/config/site";
@@ -11,6 +11,32 @@ const INITIAL_GREETING: ChatMessage = {
 
 Задайте мне любой вопрос: про пульты, операторов ТВ, продление подписок, видеонаблюдение, кабели, кронштейны или график работы в Сатпаеве!`,
 };
+
+/** Приятный негромкий звуковой сигнал оповещения с помощью Web Audio API */
+function playSoftChime() {
+  try {
+    const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+    if (!AudioCtx) return;
+    const ctx = new AudioCtx();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(587.33, ctx.currentTime); // D5
+    osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.12); // A5
+
+    gain.gain.setValueAtTime(0.08, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.22);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start();
+    osc.stop(ctx.currentTime + 0.22);
+  } catch (e) {
+    // Ignore audio policy errors
+  }
+}
 
 export function AiChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,6 +55,14 @@ export function AiChatWidget() {
     }
   }, [messages, isOpen]);
 
+  const handleToggle = () => {
+    setIsOpen((prev) => {
+      const next = !prev;
+      if (next) playSoftChime();
+      return next;
+    });
+  };
+
   const handleSend = async () => {
     const text = input.trim();
     if (!text || isLoading) return;
@@ -44,6 +78,7 @@ export function AiChatWidget() {
       const chatHistory = updatedMessages.filter((m) => m !== INITIAL_GREETING);
       const reply = await fetchGroqChat(chatHistory.length > 0 ? chatHistory : [userMessage]);
       setMessages([...updatedMessages, { role: "assistant", content: cleanMarkdownSymbols(reply) }]);
+      playSoftChime();
     } catch (err) {
       setMessages([
         ...updatedMessages,
@@ -60,25 +95,34 @@ export function AiChatWidget() {
   const handleClearChat = () => {
     setMessages([INITIAL_GREETING]);
     setInput("");
+    playSoftChime();
   };
 
   return (
     <>
-      {/* Floating Toggle Button */}
-      <button
-        type="button"
-        onClick={() => setIsOpen((prev) => !prev)}
-        aria-label="Открыть ИИ-консультант"
-        className="fixed bottom-20 left-4 z-50 flex items-center gap-2.5 rounded-full bg-gradient-to-r from-primary via-primary-glow to-primary p-3.5 text-primary-foreground shadow-lg shadow-primary/30 transition-transform hover:scale-105 active:scale-95 md:bottom-6 md:left-6 md:px-5 md:py-3.5"
-      >
-        <div className="relative flex items-center justify-center">
-          <Bot className="size-6" />
-          <Sparkles className="absolute -top-1 -right-1 size-3 text-signal animate-pulse" />
-        </div>
-        <span className="hidden font-display text-xs font-bold uppercase tracking-wider sm:inline-block">
-          ИИ Консультант
-        </span>
-      </button>
+      {/* Floating Toggle Button with Sound & Pulse Animation */}
+      <div className="fixed bottom-20 left-4 z-50 flex flex-col items-start gap-1.5 md:bottom-6 md:left-6">
+        {!isOpen && (
+          <div className="animate-bounce rounded-full bg-slate-900 px-3 py-1 text-[11px] font-bold text-white shadow-md">
+            ✨ Задайте вопрос ИИ!
+          </div>
+        )}
+
+        <button
+          type="button"
+          onClick={handleToggle}
+          aria-label="Открыть ИИ-консультант"
+          className="relative flex items-center gap-2.5 rounded-full bg-gradient-to-r from-primary via-blue-600 to-primary p-3.5 text-primary-foreground shadow-xl shadow-primary/35 ring-4 ring-primary/20 transition-all hover:scale-110 active:scale-95 md:px-5 md:py-3.5"
+        >
+          <div className="relative flex items-center justify-center">
+            <Bot className="size-6 animate-pulse" />
+            <Sparkles className="absolute -top-1.5 -right-1.5 size-3.5 text-amber-300 animate-spin" />
+          </div>
+          <span className="hidden font-display text-xs font-bold uppercase tracking-wider sm:inline-block">
+            ИИ Консультант
+          </span>
+        </button>
+      </div>
 
       {/* Chat Window Modal */}
       {isOpen && (
