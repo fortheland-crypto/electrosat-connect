@@ -44,13 +44,6 @@ export function Header() {
 
         {/* Contact Action Buttons */}
         <div className="flex items-center gap-2">
-          <a
-            href={site.phoneHref}
-            className="hidden items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-2 text-xs font-bold text-slate-800 transition-colors hover:border-primary hover:text-primary md:flex"
-          >
-            <Phone className="size-3.5 text-primary" />
-            {site.phoneDisplay}
-          </a>
           <Button asChild variant="whatsapp" size="lg" className="hidden sm:inline-flex rounded-full">
             <a href={waLink()} target="_blank" rel="noopener noreferrer">
               WhatsApp

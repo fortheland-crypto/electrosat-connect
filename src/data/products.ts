@@ -6,10 +6,10 @@ import receiverImg from "@/assets/products/prod_receiver.jpg";
 import antennaImg from "@/assets/products/prod_antenna.jpg";
 import lnbImg from "@/assets/products/prod_lnb.jpg";
 import cableImg from "@/assets/products/prod_cable.jpg";
-import bracketImg from "@/assets/products/prod_bracket.svg";
-import chargerImg from "@/assets/products/prod_charger.svg";
-import flashImg from "@/assets/products/prod_flash.svg";
-import applianceImg from "@/assets/products/prod_appliance.svg";
+import bracketImg from "@/assets/products/prod_bracket.jpg";
+import chargerImg from "@/assets/products/prod_charger.jpg";
+import flashImg from "@/assets/products/prod_flash.jpg";
+import applianceImg from "@/assets/products/prod_appliance.jpg";
 
 export type Category = { id: string; title: string };
 

@@ -27,7 +27,7 @@ export function Hero() {
           </div>
 
           <h1 className="mt-5 text-balance font-display text-3xl font-black text-slate-900 leading-[1.15] tracking-tight sm:text-5xl lg:text-5xl">
-            Спутниковое ТВ & Видеонаблюдение
+            Спутниковое ТВ и видеонаблюдение
           </h1>
 
           <p className="mt-3 font-sans text-base font-semibold text-primary sm:text-lg">
