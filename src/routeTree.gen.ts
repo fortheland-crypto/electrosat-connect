@@ -15,6 +15,7 @@ import { Route as CctvRouteImport } from './routes/cctv'
 import { Route as ContactsRouteImport } from './routes/contacts'
 import { Route as SatelliteTvRouteImport } from './routes/satellite-tv'
 import { Route as ShopRouteImport } from './routes/shop'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as WorksRouteImport } from './routes/works'
 
 const IndexRoute = IndexRouteImport.update({
@@ -47,6 +48,11 @@ const ShopRoute = ShopRouteImport.update({
   path: '/shop',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WorksRoute = WorksRouteImport.update({
   id: '/works',
   path: '/works',
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/contacts': typeof ContactsRoute
   '/satellite-tv': typeof SatelliteTvRoute
   '/shop': typeof ShopRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/works': typeof WorksRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/contacts': typeof ContactsRoute
   '/satellite-tv': typeof SatelliteTvRoute
   '/shop': typeof ShopRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/works': typeof WorksRoute
 }
 export interface FileRoutesById {
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/contacts': typeof ContactsRoute
   '/satellite-tv': typeof SatelliteTvRoute
   '/shop': typeof ShopRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/works': typeof WorksRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/contacts'
     | '/satellite-tv'
     | '/shop'
+    | '/sitemap.xml'
     | '/works'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/contacts'
     | '/satellite-tv'
     | '/shop'
+    | '/sitemap.xml'
     | '/works'
   id:
     | '__root__'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/contacts'
     | '/satellite-tv'
     | '/shop'
+    | '/sitemap.xml'
     | '/works'
   fileRoutesById: FileRoutesById
 }
@@ -118,6 +130,7 @@ export interface RootRouteChildren {
   ContactsRoute: typeof ContactsRoute
   SatelliteTvRoute: typeof SatelliteTvRoute
   ShopRoute: typeof ShopRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WorksRoute: typeof WorksRoute
 }
 
@@ -165,6 +178,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShopRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/works': {
       id: '/works'
       path: '/works'
@@ -182,6 +202,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactsRoute: ContactsRoute,
   SatelliteTvRoute: SatelliteTvRoute,
   ShopRoute: ShopRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   WorksRoute: WorksRoute,
 }
 export const routeTree = rootRouteImport
