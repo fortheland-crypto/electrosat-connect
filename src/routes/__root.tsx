@@ -15,6 +15,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsappFab } from "@/components/layout/WhatsappFab";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
+import { AiChatWidget } from "@/components/chat/AiChatWidget";
 import { Toaster } from "@/components/ui/sonner";
 
 
@@ -150,6 +151,7 @@ function RootComponent() {
       </div>
       <WhatsappFab />
       <MobileActionBar />
+      <AiChatWidget />
       <Toaster position="top-center" richColors />
     </QueryClientProvider>
   );

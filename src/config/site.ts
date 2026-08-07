@@ -15,7 +15,7 @@ export const site = {
   addressShort: "ТД «Арман», г. Сатпаев",
   addressFull:
     "г. Сатпаев, ТД «Арман», ул. Мангилик Ел 20А (бывшая Комарова 20А), цокольный этаж",
-  workHours: "Уточните время работы по телефону",
+  workHours: "Пн: Выходной | Вт–Сб: 11:00–19:00 | Вс: 11:00–17:00",
   mapEmbed:
     "https://www.google.com/maps?q=%D0%A1%D0%B0%D1%82%D0%BF%D0%B0%D0%B5%D0%B2%20%D0%9C%D0%B0%D0%BD%D0%B3%D0%B8%D0%BB%D0%B8%D0%BA%20%D0%95%D0%BB%2020%D0%90&output=embed",
 } as const;

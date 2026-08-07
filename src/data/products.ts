@@ -1,10 +1,12 @@
 import shopImg from "@/assets/shop.jpg";
-
-/**
- * Каталог магазина. ДЕМО-контент — заменяется на реальные товары.
- * Чтобы добавить категорию: допишите её в `categories`.
- * Чтобы добавить товар: добавьте объект в `products` с существующим categoryId.
- */
+import cctvImg from "@/assets/cctv.jpg";
+import satelliteImg from "@/assets/satellite.jpg";
+import remoteImg from "@/assets/products/prod_remote.jpg";
+import receiverImg from "@/assets/products/prod_receiver.jpg";
+import antennaImg from "@/assets/products/prod_antenna.jpg";
+import lnbImg from "@/assets/products/prod_lnb.jpg";
+import cableImg from "@/assets/products/prod_cable.jpg";
+import bracketImg from "@/assets/products/prod_bracket.jpg";
 
 export type Category = { id: string; title: string };
 
@@ -13,25 +15,22 @@ export type Product = {
   categoryId: string;
   name: string;
   description: string;
-  /** null — цена уточняется */
   price: number | null;
+  priceDisplay?: string;
   inStock: boolean;
   image: string;
-  /** Демо-карточка: контент можно заменить */
   demo?: boolean;
 };
 
 export const categories: Category[] = [
-  { id: "remotes", title: "Пульты дистанционного управления" },
-  { id: "receivers", title: "Спутниковые ресиверы" },
+  { id: "remotes", title: "Пульты ДУ (Samsung, LG, Artel...)" },
+  { id: "receivers", title: "Спутниковые ресиверы & Головки" },
   { id: "antennas", title: "Спутниковые антенны" },
-  { id: "lnb", title: "Конвертеры" },
-  { id: "cables", title: "Кабели" },
-  { id: "connectors", title: "Разъёмы" },
-  { id: "brackets", title: "Кронштейны" },
-  { id: "tv-accessories", title: "ТВ-аксессуары" },
-  { id: "electronics", title: "Электроника" },
-  { id: "appliances", title: "Мелкая бытовая техника" },
+  { id: "lnb", title: "Конвертеры LNB" },
+  { id: "cables", title: "Кабели и шнуры" },
+  { id: "brackets", title: "Кронштейны (поворотные и настенные)" },
+  { id: "cctv", title: "Видеонаблюдение" },
+  { id: "appliances", title: "Зарядки, чайники, фены, утюги, флешки" },
   { id: "other", title: "Другие товары" },
 ];
 
@@ -39,127 +38,133 @@ export const products: Product[] = [
   {
     id: "p1",
     categoryId: "remotes",
-    name: "Пульт для ТВ-приставки",
-    description: "Демонстрационная карточка. Уточните модель по WhatsApp.",
-    price: null,
+    name: "Пульты для телевизоров (Samsung, LG, Artel, Yasin, ARG...)",
+    description: "Огромный выбор пультов для ТВ брендов Samsung, LG, Artel, Yasin, ARG, Panasonic, Philips, TCL, Hisense и др.",
+    price: 800,
+    priceDisplay: "от 800 до 4 500 ₸",
     inStock: true,
-    image: shopImg,
-    demo: true,
+    image: remoteImg,
   },
   {
     id: "p2",
     categoryId: "remotes",
-    name: "Универсальный пульт для телевизора",
-    description: "Демонстрационная карточка. Наличие уточняется.",
-    price: null,
+    name: "Пульт для ТВ-приставки и цифрового тюнера",
+    description: "Пульты для любых цифровых и спутниковых приставок, приставок OTAU TV, НТВ, Триколор, Alma TV.",
+    price: 1500,
+    priceDisplay: "от 800 до 4 500 ₸",
     inStock: true,
-    image: shopImg,
-    demo: true,
+    image: remoteImg,
   },
   {
     id: "p3",
     categoryId: "receivers",
-    name: "Спутниковый ресивер",
-    description: "Демонстрационная карточка. Модели уточняйте в магазине.",
-    price: null,
+    name: "Цифровой спутниковый ресивер HD",
+    description: "Работаем со всеми операторами: OTAU TV, Alma TV, НТВ-Плюс, Триколор, МТС, Телекарта.",
+    price: 12000,
+    priceDisplay: "от 12 000 ₸",
     inStock: true,
-    image: shopImg,
-    demo: true,
-  },
-  {
-    id: "p4",
-    categoryId: "antennas",
-    name: "Спутниковая антенна",
-    description: "Демонстрационная карточка. Диаметр и комплект — по запросу.",
-    price: null,
-    inStock: true,
-    image: shopImg,
-    demo: true,
+    image: receiverImg,
   },
   {
     id: "p5",
     categoryId: "lnb",
-    name: "Конвертер для спутниковой антенны",
-    description: "Демонстрационная карточка. Тип уточняется.",
-    price: null,
+    name: "Спутниковая головка (конвертер LNB)",
+    description: "Головки для спутникового оборудования (универсальные, линейные, круговые) на 1, 2 или 4 выхода.",
+    price: 2500,
+    priceDisplay: "от 2 500 ₸",
     inStock: true,
-    image: shopImg,
-    demo: true,
+    image: lnbImg,
+  },
+  {
+    id: "p4",
+    categoryId: "antennas",
+    name: "Спутниковая офсетная антенна (тарелка)",
+    description: "Качественные антенны для приема OTAU TV, НТВ, Триколор, Телекарта. Выезд мастера на установку.",
+    price: 12000,
+    priceDisplay: "от 12 000 ₸",
+    inStock: true,
+    image: antennaImg,
+  },
+  {
+    id: "p9",
+    categoryId: "brackets",
+    name: "Кронштейны для ТВ и антенн (поворотные и фиксированные)",
+    description: "Настенные, поворотные и наклонно-поворотные кронштейны для телевизоров любой диагонали и крепежи для антенн.",
+    price: 2500,
+    priceDisplay: "от 2 500 до 6 500 ₸",
+    inStock: true,
+    image: bracketImg,
   },
   {
     id: "p6",
     categoryId: "cables",
-    name: "Коаксиальный кабель",
-    description: "Демонстрационная карточка. Метраж по запросу.",
-    price: null,
+    name: "Телевизионный коаксиальный кабель RG6",
+    description: "Качественный медный телевизионный кабель с экранированием. Продажа от 1 метра.",
+    price: 150,
+    priceDisplay: "150 ₸ / метр",
     inStock: true,
-    image: shopImg,
-    demo: true,
+    image: cableImg,
   },
   {
     id: "p7",
-    categoryId: "connectors",
-    name: "Разъём F-типа",
-    description: "Демонстрационная карточка. Наличие уточняется.",
-    price: null,
+    categoryId: "cctv",
+    name: "Уличная & Внутренняя камера видеонаблюдения IP/Wi-Fi",
+    description: "Камеры высокого разрешения, ночная подсветка, запись на карту памяти/облако, удаленный доступ с телефона.",
+    price: 14000,
+    priceDisplay: "от 14 000 ₸",
     inStock: true,
-    image: shopImg,
-    demo: true,
+    image: cctvImg,
   },
   {
     id: "p8",
-    categoryId: "brackets",
-    name: "Кронштейн для антенны",
-    description: "Демонстрационная карточка. Размеры уточняются.",
-    price: null,
-    inStock: false,
-    image: shopImg,
-    demo: true,
-  },
-  {
-    id: "p9",
-    categoryId: "tv-accessories",
-    name: "ТВ-аксессуары",
-    description: "Демонстрационная карточка. Ассортимент в магазине.",
-    price: null,
+    categoryId: "cctv",
+    name: "Видеорегистратор DVR / NVR",
+    description: "Запись с камер видеонаблюдения, поддержка жестких дисков, вывод на монитор и смартфон.",
+    price: 22000,
+    priceDisplay: "от 22 000 ₸",
     inStock: true,
-    image: shopImg,
-    demo: true,
-  },
-  {
-    id: "p10",
-    categoryId: "electronics",
-    name: "Электроника для дома",
-    description: "Демонстрационная карточка. Уточните позицию по WhatsApp.",
-    price: null,
-    inStock: true,
-    image: shopImg,
-    demo: true,
+    image: cctvImg,
   },
   {
     id: "p11",
     categoryId: "appliances",
-    name: "Мелкая бытовая техника",
-    description: "Демонстрационная карточка. Ассортимент уточняется.",
-    price: null,
+    name: "Зарядные устройства, шнуры (Type-C, Lightning, Micro-USB)",
+    description: "Быстрые зарядные устройства, надежные кабели для смартфонов и гаджетов.",
+    price: 1200,
+    priceDisplay: "от 1 000 ₸",
     inStock: true,
     image: shopImg,
-    demo: true,
   },
   {
-    id: "p12",
-    categoryId: "other",
-    name: "Другие товары",
-    description: "Демонстрационная карточка. Спросите в магазине или в WhatsApp.",
-    price: null,
+    id: "p13",
+    categoryId: "appliances",
+    name: "USB-флешки и карты памяти (SD / MicroSD)",
+    description: "Надежные флеш-накопители и карты памяти для телевизоров, авто, приставок и камер.",
+    price: 1800,
+    priceDisplay: "от 1 500 ₸",
     inStock: true,
     image: shopImg,
-    demo: true,
+  },
+  {
+    id: "p14",
+    categoryId: "appliances",
+    name: "Мелкая бытовая техника (чайники, утюги, фены)",
+    description: "Электрочайники, утюги, фены для волос и бытовая техника в наличии в магазине в ТД «Арман».",
+    price: 3500,
+    priceDisplay: "от 3 500 ₸",
+    inStock: true,
+    image: shopImg,
   },
 ];
 
-export function formatPrice(price: number | null) {
-  return price === null
+export function formatPrice(productOrPrice: Product | number | null) {
+  if (typeof productOrPrice === "object" && productOrPrice !== null) {
+    if (productOrPrice.priceDisplay) return productOrPrice.priceDisplay;
+    return productOrPrice.price === null
+      ? "Цена по запросу"
+      : new Intl.NumberFormat("ru-RU").format(productOrPrice.price) + " ₸";
+  }
+  return productOrPrice === null
     ? "Цена по запросу"
-    : new Intl.NumberFormat("ru-RU").format(price) + " ₸";
+    : new Intl.NumberFormat("ru-RU").format(productOrPrice) + " ₸";
 }

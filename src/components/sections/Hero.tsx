@@ -31,14 +31,17 @@ export function Hero() {
 
       <div className="mx-auto max-w-7xl px-4 py-16 md:py-24 lg:px-8 lg:py-32">
         <div className="max-w-2xl animate-rise">
-          <p className="inline-flex rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary shadow-xs backdrop-blur-md">
+            <span className="h-2 w-2 rounded-full bg-signal animate-ping" />
             ElectroSat • ТД «Арман», Сатпаев
-          </p>
-          <h1 className="mt-5 text-balance text-3xl font-bold leading-[1.1] sm:text-4xl lg:text-6xl">
+          </div>
+          <h1 className="mt-5 text-balance text-3xl font-black leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
             Спутниковое ТВ и видеонаблюдение в{" "}
-            <span className="text-gradient">Сатпаеве и Жезказгане</span>
+            <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
+              Сатпаеве и Жезказгане
+            </span>
           </h1>
-          <p className="mt-4 font-display text-sm font-semibold uppercase tracking-[0.18em] text-primary-glow sm:text-base">
+          <p className="mt-4 font-display text-sm font-bold uppercase tracking-[0.16em] text-primary sm:text-base">
             Установка • Настройка • Монтаж • Обслуживание
           </p>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-foreground/80 md:text-lg">

@@ -31,14 +31,9 @@ export function Catalog({ as = "h2" }: { as?: "h1" | "h2" }) {
       <SectionHeading
         as={as}
         eyebrow="Магазин ElectroSat"
-        title="Каталог товаров"
-        text="Спутниковое оборудование, электроника и аксессуары. Наличие и цену уточняйте в WhatsApp или в магазине в ТД «Арман»."
+        title="Каталог товаров и оборудования"
+        text="Спутниковое ТВ оборудование, системы видеонаблюдения, пульты, кабели и аксессуары. Наличие и заказ — в магазине в ТД «Арман» или через WhatsApp."
       />
-
-      <p className="mt-4 rounded-xl border border-signal/30 bg-signal/10 px-4 py-3 text-sm text-signal">
-        Ниже — демонстрационные карточки. Содержимое будет заменено реальными
-        товарами магазина.
-      </p>
 
       <div className="mt-8 flex flex-wrap gap-2">
         {[{ id: "all", title: "Все товары" }, ...categories].map((cat) => (
@@ -79,7 +74,7 @@ export function Catalog({ as = "h2" }: { as?: "h1" | "h2" }) {
               </p>
               <div className="mt-4 flex items-center justify-between gap-2">
                 <span className="font-display text-base font-bold text-primary">
-                  {formatPrice(p.price)}
+                  {formatPrice(p)}
                 </span>
                 <span
                   className={cn(
@@ -136,7 +131,7 @@ export function Catalog({ as = "h2" }: { as?: "h1" | "h2" }) {
                 </div>
                 <div className="flex justify-between">
                   <dt className="text-muted-foreground">Цена</dt>
-                  <dd className="font-medium">{formatPrice(selected.price)}</dd>
+                  <dd className="font-medium">{formatPrice(selected)}</dd>
                 </div>
                 <div className="flex justify-between">
                   <dt className="text-muted-foreground">Наличие</dt>

@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Instagram, MapPin, MessageCircle, Phone } from "lucide-react";
 
 import { site, waLink } from "@/config/site";
+import { Logo } from "./Logo";
 
 const footerNav = [
   { label: "Спутниковое ТВ", to: "/satellite-tv" },
@@ -17,12 +18,7 @@ export function Footer() {
     <footer className="mt-20 border-t border-border bg-card/40">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-3 lg:px-8">
         <div>
-          <div className="flex items-center gap-2.5">
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[image:var(--gradient-primary)] font-display font-bold text-primary-foreground">
-              E
-            </span>
-            <span className="font-display text-lg font-bold">ElectroSat</span>
-          </div>
+          <Logo />
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
             Спутниковое телевидение и видеонаблюдение. Установка, настройка и
             обслуживание в Сатпаеве и Жезказгане.

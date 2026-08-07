@@ -5,6 +5,7 @@ import { Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { nav, site, waLink } from "@/config/site";
 import { cn } from "@/lib/utils";
+import { Logo } from "./Logo";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -13,19 +14,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 lg:px-8">
-        <Link to="/" className="flex min-w-0 items-center gap-2.5">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[image:var(--gradient-primary)] font-display text-base font-bold text-primary-foreground">
-            E
-          </span>
-          <span className="min-w-0">
-            <span className="block truncate font-display text-lg font-bold leading-none">
-              ElectroSat
-            </span>
-            <span className="hidden truncate text-[11px] text-muted-foreground sm:block">
-              Сатпаев • Жезказган
-            </span>
-          </span>
-        </Link>
+        <Logo />
 
         <nav className="hidden items-center gap-1 xl:flex">
           {nav.map((item) => (
