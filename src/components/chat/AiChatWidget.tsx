@@ -3,13 +3,13 @@ import { Bot, MessageCircle, Send, Sparkles, X, Loader2, Phone, RotateCcw } from
 
 import { Button } from "@/components/ui/button";
 import { site, waLink } from "@/config/site";
-import { fetchGroqChat, type ChatMessage } from "@/lib/groq";
+import { fetchGroqChat, cleanMarkdownSymbols, type ChatMessage } from "@/lib/groq";
 
 const INITIAL_GREETING: ChatMessage = {
   role: "assistant",
-  content: `Здравствуйте! Я виртуальный ИИ-консультант ElectroSat. 
+  content: `Здравствуйте! Я ИИ-консультант ElectroSat.
 
-Задайте мне любой вопрос вручную: про пульты, операторов ТВ, видеонаблюдение, кабели, кронштейны или работу магазина в Сатпаеве!`,
+Задайте мне любой вопрос: про пульты, операторов ТВ, продление подписок, видеонаблюдение, кабели, кронштейны или график работы в Сатпаеве!`,
 };
 
 export function AiChatWidget() {
@@ -43,13 +43,13 @@ export function AiChatWidget() {
     try {
       const chatHistory = updatedMessages.filter((m) => m !== INITIAL_GREETING);
       const reply = await fetchGroqChat(chatHistory.length > 0 ? chatHistory : [userMessage]);
-      setMessages([...updatedMessages, { role: "assistant", content: reply }]);
+      setMessages([...updatedMessages, { role: "assistant", content: cleanMarkdownSymbols(reply) }]);
     } catch (err) {
       setMessages([
         ...updatedMessages,
         {
           role: "assistant",
-          content: "Не удалось получить ответ. Вы можете позвонить нам или написать в WhatsApp: +7 705 220 25 75",
+          content: "Не удалось получить ответ. Напишите нам в WhatsApp по номеру +7 705 220 25 75",
         },
       ]);
     } finally {
@@ -95,7 +95,7 @@ export function AiChatWidget() {
                 </h3>
                 <p className="flex items-center gap-1 text-[11px] text-muted-foreground">
                   <span className="size-2 rounded-full bg-whatsapp animate-pulse" />
-                  Groq LLaMA 3.3 • Онлайн
+                  Онлайн • Консультант
                 </p>
               </div>
             </div>
@@ -121,7 +121,7 @@ export function AiChatWidget() {
           </div>
 
           {/* Messages Container */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-3 text-sm">
+          <div className="flex-1 overflow-y-auto p-4 space-y-3 font-sans text-[13.5px]">
             {messages.map((m, i) => (
               <div
                 key={i}
@@ -130,13 +130,13 @@ export function AiChatWidget() {
                 }`}
               >
                 <div
-                  className={`max-w-[85%] whitespace-pre-wrap rounded-2xl px-4 py-2.5 leading-relaxed ${
+                  className={`max-w-[88%] whitespace-pre-wrap rounded-2xl px-4 py-2.5 leading-relaxed tracking-normal font-sans ${
                     m.role === "user"
-                      ? "bg-primary text-primary-foreground font-medium rounded-br-xs"
-                      : "bg-secondary/70 text-foreground border border-border/60 rounded-bl-xs shadow-xs"
+                      ? "bg-primary text-primary-foreground font-medium rounded-br-xs shadow-xs"
+                      : "bg-slate-100 text-slate-900 border border-slate-200/80 rounded-bl-xs shadow-xs dark:bg-secondary/80 dark:text-foreground dark:border-border/60"
                   }`}
                 >
-                  {m.content}
+                  {cleanMarkdownSymbols(m.content)}
                 </div>
               </div>
             ))}
@@ -144,7 +144,7 @@ export function AiChatWidget() {
             {isLoading && (
               <div className="flex items-center gap-2 rounded-2xl border border-border/60 bg-secondary/50 px-4 py-2.5 text-xs text-muted-foreground">
                 <Loader2 className="size-3.5 animate-spin text-primary" />
-                <span>ИИ печатает ответ...</span>
+                <span>ИИ готовится ответить...</span>
               </div>
             )}
             <div ref={messagesEndRef} />
