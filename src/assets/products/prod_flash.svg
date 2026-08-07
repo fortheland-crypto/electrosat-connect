@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="metallic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="50%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+    <filter id="shadow3" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#bg3)"/>
+
+  <g filter="url(#shadow3)" transform="translate(140, 140)">
+    <!-- USB 3.0 Flash Drive -->
+    <g transform="translate(60, 60) rotate(-20)">
+      <rect x="0" y="0" width="130" height="260" rx="16" fill="url(#metallic)" stroke="#475569" stroke-width="2"/>
+      <rect x="25" y="-70" width="80" height="70" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+      <!-- USB 3.0 Blue Insulator -->
+      <rect x="35" y="-55" width="60" height="14" rx="2" fill="#2563eb"/>
+      <rect x="25" y="160" width="80" height="70" rx="10" fill="#1e293b"/>
+      <text x="65" y="200" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="22" font-weight="bold">64 GB</text>
+    </g>
+
+    <!-- SD Card Adapter -->
+    <g transform="translate(280, 100) rotate(15)">
+      <path d="M 0 0 L 140 0 L 160 30 L 160 240 L 0 240 Z" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+      <!-- Lock switch -->
+      <rect x="-10" y="50" width="10" height="30" rx="2" fill="#ef4444"/>
+      <!-- Pins -->
+      <rect x="20" y="10" width="12" height="40" fill="#eab308"/>
+      <rect x="40" y="10" width="12" height="40" fill="#eab308"/>
+      <rect x="60" y="10" width="12" height="40" fill="#eab308"/>
+      <rect x="80" y="10" width="12" height="40" fill="#eab308"/>
+      <rect x="100" y="10" width="12" height="40" fill="#eab308"/>
+      <rect x="120" y="10" width="12" height="40" fill="#eab308"/>
+      <text x="75" y="140" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20" font-weight="bold">SD ULTRA</text>
+      <text x="75" y="180" text-anchor="middle" fill="#ef4444" font-family="sans-serif" font-size="26" font-weight="extrabold">128 GB</text>
+    </g>
+
+    <!-- MicroSD Card -->
+    <g transform="translate(220, 320) rotate(-5)">
+      <rect x="0" y="0" width="80" height="110" rx="6" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+      <text x="40" y="50" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold">Micro</text>
+      <text x="40" y="75" text-anchor="middle" fill="#2563eb" font-family="sans-serif" font-size="16" font-weight="extrabold">32 GB</text>
+    </g>
+  </g>
+
+  <!-- Label Badge -->
+  <rect x="180" y="680" width="440" height="60" rx="30" fill="#1e293b" filter="url(#shadow3)"/>
+  <text x="400" y="718" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20" font-weight="bold">USB Флешки &amp; Карты памяти SD</text>
+</svg>

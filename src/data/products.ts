@@ -6,7 +6,10 @@ import receiverImg from "@/assets/products/prod_receiver.jpg";
 import antennaImg from "@/assets/products/prod_antenna.jpg";
 import lnbImg from "@/assets/products/prod_lnb.jpg";
 import cableImg from "@/assets/products/prod_cable.jpg";
-import bracketImg from "@/assets/products/prod_bracket.jpg";
+import bracketImg from "@/assets/products/prod_bracket.svg";
+import chargerImg from "@/assets/products/prod_charger.svg";
+import flashImg from "@/assets/products/prod_flash.svg";
+import applianceImg from "@/assets/products/prod_appliance.svg";
 
 export type Category = { id: string; title: string };
 
@@ -88,8 +91,8 @@ export const products: Product[] = [
   {
     id: "p9",
     categoryId: "brackets",
-    name: "Кронштейны для ТВ и антенн (поворотные и фиксированные)",
-    description: "Настенные, поворотные и наклонно-поворотные кронштейны для телевизоров любой диагонали и крепежи для антенн.",
+    name: "Кронштейны настенные и поворотные для ТВ",
+    description: "Настенные, поворотные и наклонно-поворотные кронштейны для телевизоров любой диагонали.",
     price: 2500,
     priceDisplay: "от 2 500 до 6 500 ₸",
     inStock: true,
@@ -129,31 +132,31 @@ export const products: Product[] = [
     id: "p11",
     categoryId: "appliances",
     name: "Зарядные устройства, шнуры (Type-C, Lightning, Micro-USB)",
-    description: "Быстрые зарядные устройства, надежные кабели для смартфонов и гаджетов.",
+    description: "Быстрые сетевые зарядные устройства и прочные кабели для телефонов и планшетов.",
     price: 1200,
     priceDisplay: "от 1 000 ₸",
     inStock: true,
-    image: shopImg,
+    image: chargerImg,
   },
   {
     id: "p13",
     categoryId: "appliances",
     name: "USB-флешки и карты памяти (SD / MicroSD)",
-    description: "Надежные флеш-накопители и карты памяти для телевизоров, авто, приставок и камер.",
+    description: "USB 3.0 флеш-накопители и карты памяти для телевизоров, приставок, видеокамер и смартфонов.",
     price: 1800,
     priceDisplay: "от 1 500 ₸",
     inStock: true,
-    image: shopImg,
+    image: flashImg,
   },
   {
     id: "p14",
     categoryId: "appliances",
     name: "Мелкая бытовая техника (чайники, утюги, фены)",
-    description: "Электрочайники, утюги, фены для волос и бытовая техника в наличии в магазине в ТД «Арман».",
+    description: "Электрочайники, утюги, фены для волос в наличии в магазине ElectroSat в ТД «Арман».",
     price: 3500,
     priceDisplay: "от 3 500 ₸",
     inStock: true,
-    image: shopImg,
+    image: applianceImg,
   },
 ];
 

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="whitePlastic" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="cableColor" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#bg2)"/>
+  
+  <g filter="url(#shadow2)" transform="translate(140, 120)">
+    <!-- Fast Charger Power Adapter Block -->
+    <rect x="220" y="80" width="180" height="240" rx="24" fill="url(#whitePlastic)" stroke="#cbd5e1" stroke-width="2"/>
+    <!-- Plug Pins -->
+    <rect x="270" y="20" width="20" height="60" rx="8" fill="#94a3b8"/>
+    <rect x="330" y="20" width="20" height="60" rx="8" fill="#94a3b8"/>
+    <!-- USB Ports -->
+    <rect x="260" y="260" width="100" height="24" rx="6" fill="#1e293b"/>
+    <rect x="275" y="266" width="70" height="12" rx="3" fill="#2563eb"/>
+    <text x="310" y="210" text-anchor="middle" fill="#2563eb" font-family="sans-serif" font-size="28" font-weight="extrabold">FAST</text>
+    <text x="310" y="240" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="14" font-weight="bold">CHARGER 65W</text>
+
+    <!-- Curved USB Cables -->
+    <!-- Type-C Cable -->
+    <path d="M 310 284 Q 310 440 160 480" fill="none" stroke="url(#cableColor)" stroke-width="14" stroke-linecap="round"/>
+    <rect x="110" y="460" width="60" height="28" rx="8" fill="#1e293b" transform="rotate(-15, 140, 474)"/>
+    <rect x="85" y="468" width="28" height="12" rx="4" fill="#94a3b8" transform="rotate(-15, 99, 474)"/>
+
+    <!-- Lightning / Micro-USB Cable -->
+    <path d="M 310 284 Q 310 460 460 500" fill="none" stroke="#475569" stroke-width="14" stroke-linecap="round"/>
+    <rect x="450" y="484" width="60" height="28" rx="8" fill="#1e293b" transform="rotate(15, 480, 498)"/>
+    <rect x="506" y="492" width="28" height="12" rx="4" fill="#94a3b8" transform="rotate(15, 520, 498)"/>
+  </g>
+
+  <!-- Label Badge -->
+  <rect x="180" y="680" width="440" height="60" rx="30" fill="#1e293b" filter="url(#shadow2)"/>
+  <text x="400" y="718" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="20" font-weight="bold">Зарядные устройства &amp; Шнуры</text>
+</svg>
