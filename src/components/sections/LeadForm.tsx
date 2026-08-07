@@ -106,8 +106,8 @@ export function LeadForm() {
           <div className="grid gap-2">
             <Label htmlFor="lead-name">Имя</Label>
             <Input id="lead-name" name="name" maxLength={80} placeholder="Ваше имя" />
-            {errors.name && (
-              <p className="text-xs text-destructive">{errors.name}</p>
+            {errors['name'] && (
+              <p className="text-xs text-destructive">{errors['name']}</p>
             )}
           </div>
 
@@ -121,8 +121,8 @@ export function LeadForm() {
               maxLength={30}
               placeholder="+7 ___ ___ __ __"
             />
-            {errors.phone && (
-              <p className="text-xs text-destructive">{errors.phone}</p>
+            {errors['phone'] && (
+              <p className="text-xs text-destructive">{errors['phone']}</p>
             )}
           </div>
 
@@ -140,8 +140,8 @@ export function LeadForm() {
                 </option>
               ))}
             </select>
-            {errors.service && (
-              <p className="text-xs text-destructive">{errors.service}</p>
+            {errors['service'] && (
+              <p className="text-xs text-destructive">{errors['service']}</p>
             )}
           </div>
 
@@ -154,8 +154,8 @@ export function LeadForm() {
               maxLength={1000}
               placeholder="Адрес, что нужно сделать, удобное время"
             />
-            {errors.comment && (
-              <p className="text-xs text-destructive">{errors.comment}</p>
+            {errors['comment'] && (
+              <p className="text-xs text-destructive">{errors['comment']}</p>
             )}
           </div>
 
