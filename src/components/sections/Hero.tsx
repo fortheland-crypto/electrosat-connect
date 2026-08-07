@@ -23,7 +23,7 @@ export function Hero() {
         <div className="max-w-2xl animate-rise">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-foreground shadow-xs backdrop-blur-md">
             <span className="size-2 rounded-full bg-whatsapp animate-pulse" />
-            <span>Магазин & Выезд мастеров • Сатпаев и Жезказган</span>
+            <span>Магазин и выезд мастеров в Сатпаеве и Жезказгане</span>
           </div>
 
           <h1 className="mt-5 text-balance font-display text-3xl font-black text-slate-900 leading-[1.15] tracking-tight sm:text-5xl lg:text-5xl">
@@ -31,7 +31,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-3 font-sans text-base font-semibold text-primary sm:text-lg">
-            Установка • Настройка • Продажа оборудования • Продление подписок
+            Установка, настройка, продажа оборудования и продление подписок
           </p>
 
           <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-700">

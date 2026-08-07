@@ -95,7 +95,7 @@ export function AiChatWidget() {
                 </h3>
                 <p className="flex items-center gap-1 text-[11px] text-muted-foreground">
                   <span className="size-2 rounded-full bg-whatsapp animate-pulse" />
-                  Онлайн • Консультант
+                  Онлайн консультант
                 </p>
               </div>
             </div>

@@ -11,7 +11,7 @@ export function ShopPreviewBanner() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-md">
               <ShoppingBag className="size-4 text-primary-glow" />
-              Официальный магазин • ТД «Арман» (цокольный этаж)
+              Официальный магазин в ТД «Арман» (цокольный этаж)
             </div>
             
             <h2 className="mt-4 font-display text-2xl font-bold text-white sm:text-3xl lg:text-4xl">

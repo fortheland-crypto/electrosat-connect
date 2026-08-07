@@ -37,7 +37,7 @@ function CctvPage() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
               <Camera className="size-4" />
-              Видеонаблюдение • Сатпаев & Жезказган
+              Видеонаблюдение в Сатпаеве и Жезказгане
             </div>
             
             <h1 className="mt-4 font-display text-3xl font-black text-slate-900 leading-tight sm:text-5xl">

@@ -24,7 +24,7 @@ export function Logo({ showSubtitle = true, className }: LogoProps) {
         </div>
         {showSubtitle && (
           <span className="text-[11px] font-medium tracking-wide text-slate-500">
-            Сатпаев • Жезказган
+            Сатпаев, Жезказган
           </span>
         )}
       </div>
