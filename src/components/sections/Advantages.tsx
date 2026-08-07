@@ -23,7 +23,7 @@ export function Advantages() {
 
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {advantages.map((item, i) => {
-          const Icon = icons[i % icons.length];
+          const Icon = icons[i % icons.length]!;
           return (
             <article
               key={item.title}
