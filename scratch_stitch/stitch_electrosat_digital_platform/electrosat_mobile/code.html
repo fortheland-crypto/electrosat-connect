@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ElectroSat - Спутниковое ТВ и видеонаблюдение</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#ffb59b",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f2f3ff",
+                    "tertiary": "#8e2d00",
+                    "on-secondary-fixed-variant": "#35466f",
+                    "surface-container-highest": "#e1e2ed",
+                    "surface": "#faf8ff",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#822800",
+                    "tertiary-fixed": "#ffdbcf",
+                    "on-primary-container": "#dfe4ff",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2e3039",
+                    "inverse-on-surface": "#f0f0fc",
+                    "primary": "#0045b7",
+                    "tertiary-container": "#b73c00",
+                    "on-tertiary-fixed": "#380d00",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#00174a",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#bdceff",
+                    "primary-container": "#095be8",
+                    "on-surface-variant": "#424655",
+                    "primary-fixed-dim": "#b3c5ff",
+                    "on-primary": "#ffffff",
+                    "background": "#faf8ff",
+                    "surface-dim": "#d9d9e5",
+                    "outline": "#737686",
+                    "surface-container": "#ededf9",
+                    "secondary": "#4d5e88",
+                    "on-background": "#191b24",
+                    "on-primary-fixed-variant": "#003ea7",
+                    "surface-bright": "#faf8ff",
+                    "surface-variant": "#e1e2ed",
+                    "on-secondary-fixed": "#051a41",
+                    "on-tertiary-container": "#ffded3",
+                    "inverse-primary": "#b3c5ff",
+                    "secondary-fixed-dim": "#b4c6f6",
+                    "outline-variant": "#c3c6d7",
+                    "surface-tint": "#0053d9",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#191b24",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container-high": "#e7e7f3",
+                    "secondary-fixed": "#d9e2ff",
+                    "on-secondary-container": "#465781",
+                    "whatsapp": "#16C85B"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "2xl": "1rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "section-gap": "80px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "card-padding": "24px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Manrope"
+                    ],
+                    "headline-lg": [
+                            "Sora"
+                    ],
+                    "headline-md": [
+                            "Sora"
+                    ],
+                    "body-lg": [
+                            "Manrope"
+                    ],
+                    "label-md": [
+                            "Manrope"
+                    ],
+                    "label-sm": [
+                            "Manrope"
+                    ],
+                    "display-lg-mobile": [
+                            "Sora"
+                    ],
+                    "display-lg": [
+                            "Sora"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .soft-shadow {
+            box-shadow: 0px 4px 20px rgba(15, 23, 42, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased overflow-x-hidden">
+<!-- Top Navigation (Web) / Hidden on Mobile -->
+<header class="hidden md:flex bg-surface/80 shadow-sm backdrop-blur-md docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-display-lg text-display-lg font-bold text-on-background">Electro<span class="text-primary">Sat</span></div>
+<nav class="flex space-x-6 items-center">
+<a class="bg-primary-container text-on-primary-container rounded-full px-4 py-1.5 font-semibold font-label-md text-label-md scale-95 transition-transform hover:bg-secondary-container/50 duration-300" href="#">Главная</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50" href="#">О компании</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50" href="#">Спутниковое ТВ</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50" href="#">Видеонаблюдение</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50" href="#">Каталог</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50" href="#">Услуги</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50" href="#">Контакты</a>
+</nav>
+<div class="font-label-md text-label-md font-bold text-primary">+7 747 123 45 67</div>
+</div>
+</header>
+<!-- Mobile Header -->
+<header class="md:hidden flex justify-between items-center p-margin-mobile bg-surface sticky top-0 z-40 border-b border-surface-variant">
+<div class="font-display-lg-mobile text-display-lg-mobile font-bold text-on-background">Electro<span class="text-primary">Sat</span></div>
+<button class="p-2 text-on-surface">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</header>
+<main class="pb-24 md:pb-0">
+<!-- Hero Section -->
+<section class="relative w-full bg-inverse-surface overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full opacity-60" data-alt="A striking digital installation art piece featuring a cinematic view of a satellite dish and a modern security camera mounted on a rooftop against a dusk sky. The scene is illuminated by dramatic, high-key, soft white lighting that creates a bright, modern aesthetic despite the dark backdrop. The imagery relies on a sophisticated palette of deep navy blues, crisp whites, and metallic accents. The mood is secure, technologically advanced, and reliable, perfectly conveying expert installation and cutting-edge technology." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDueq6NZz81bEIUP3sTkAnN6FslOJvexMvd1V6bM3xFrBF_8oZMchU_5Fm1WMUa_4xjwVSHM5EfGz_59qiBoK7G7cjfjapN9n8DXeLaf9tNs9waHfsWCWQ5IustISH6yz9JZggZrRk3zyf3f9eVcuuUTnG-Piop7X3AHzED75q1T0R5jrHD5-bqRH_h8WqjT8mdJNzzXDxp7Zr0OzCz6GweE0zRS_xcoNV3l4bUELkfzT7F9_0t8Xz-')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-inverse-surface/80 to-transparent"></div>
+</div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop py-12 md:py-24 max-w-container-max mx-auto flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 flex flex-col items-start space-y-6">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded-full uppercase tracking-wider">Магазин в ТД Арман</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-error leading-tight">
+                        Спутниковое ТВ и<br/>видеонаблюдение<br/>
+<span class="text-primary-fixed-dim">в Сатпаеве и Жезказгане</span>
+</h1>
+<p class="font-body-lg text-body-lg text-inverse-on-surface max-w-md opacity-90">
+                        Продажа, установка и настройка. Все операторы и оборудование. Качество, гарантия и поддержка.
+                    </p>
+<div class="flex flex-col w-full sm:flex-row sm:w-auto space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
+<button class="bg-whatsapp hover:bg-green-600 text-white font-label-md text-label-md px-6 py-4 rounded-full flex items-center justify-center space-x-2 transition-colors w-full sm:w-auto">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span>Написать в WhatsApp</span>
+</button>
+<button class="bg-primary hover:bg-primary-container hover:text-on-primary-container text-on-primary font-label-md text-label-md px-6 py-4 rounded-full flex items-center justify-center space-x-2 transition-colors w-full sm:w-auto border border-primary hover:border-transparent">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call</span>
+<span>Вызвать мастера</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Service Card 1 -->
+<div class="bg-surface-container-lowest rounded-2xl soft-shadow p-6 md:p-8 flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300">
+<img class="w-48 h-48 object-contain mb-6" data-alt="A striking product photography shot of a pristine white satellite dish and a modern black digital receiver set top box, arranged elegantly against a pure white studio background. The equipment is illuminated by high-key, soft white studio lighting that creates a bright, modern aesthetic, highlighting the sleek curves and premium matte finish of the devices. The palette is strictly white, deep grey, and black, evoking a high-performance technical authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxmc_IPMFJGdvWFj3sP6iC3bwpt_Rdwx2kBGuSVNLPU6UTi-wsYbpNyIGesxPu9t-8zMOjjW0ijyBnhTsd_y_b27P8tpxTVX9spPcRTMZe2yAX8PPKXGbepaiJBuKRw0ODjjntqZ9Ey7ypD2AkFBgbcuaQf_X1Mzb0Ni0EorkVJV8oGDlS-AhQx8r1awPTyUQrFYx1jRR4K45TSI6_zz4-H3nFAdY2-TGdcpkGBrG4vgiZJZb1H6wy"/>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Спутниковое ТВ</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Все операторы: OTAU TV, НТВ-Плюс, Триколор, Телекарта, МТС, Alma TV. Продление подписок и настройка.
+                    </p>
+<button class="bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md px-6 py-2.5 rounded-full transition-colors mt-auto">
+                        Подробнее
+                    </button>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-surface-container-lowest rounded-2xl soft-shadow p-6 md:p-8 flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300">
+<img class="w-48 h-48 object-contain mb-6" data-alt="A premium product arrangement featuring a cluster of modern white security cameras (both dome and bullet styles) alongside a sleek black digital video recorder (DVR). The equipment is elegantly staged on a pristine white background, illuminated by sophisticated soft studio lighting that accentuates the lens reflections and clean industrial design. The color scheme is strictly monochrome—white, black, and subtle greys—conveying precision, reliability, and cutting-edge technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZBo4bkfghYHbaNpBgb8jf91lOFOAiVL1didftIYVvcAS2AbUXSu0--G3-EXAZEf69CpeQc1mkQunpeV8gNJRsUys7XlVK0oc-RvUNoCCK6fjAPyaI74uNXlPDlbHlYS5rdRlMa7q-u3cOelA-FLQYCEEuk8x0klDq7fiJdxdvV2vc18_D9rnHclkp3UZhOzVeZ21wvMqRV5Qh_tKVG82S7VzvLpMjY_m3BdIiKvdnl-EhkOiRVj7w"/>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Видеонаблюдение</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Монтаж уличных и внутренних камер IP и Wi-Fi. Онлайн-просмотр с телефона. Под ключ с гарантией.
+                    </p>
+<button class="bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md px-6 py-2.5 rounded-full transition-colors mt-auto">
+                        Подробнее
+                    </button>
+</div>
+</div>
+</section>
+<!-- Store Banner -->
+<section class="px-margin-mobile md:px-margin-desktop pb-section-gap max-w-container-max mx-auto">
+<div class="bg-secondary rounded-2xl overflow-hidden flex flex-col md:flex-row relative soft-shadow">
+<div class="p-8 md:p-12 flex flex-col justify-center items-start w-full md:w-1/2 z-10">
+<h2 class="font-headline-lg text-headline-lg text-on-secondary mb-4 leading-tight">Посетите наш магазин в ТД «Арман»</h2>
+<p class="font-body-lg text-body-lg text-on-secondary/80 mb-8">Большой выбор оборудования в наличии по лучшим ценам.</p>
+<button class="bg-primary hover:bg-primary-fixed text-on-primary font-label-md text-label-md px-8 py-3 rounded-full transition-colors">
+                        Перейти в магазин
+                    </button>
+</div>
+<div class="w-full md:w-1/2 h-64 md:h-auto relative">
+<div class="absolute inset-0 bg-cover bg-center h-full w-full opacity-90" data-alt="A striking interior shot of a modern electronics retail store, specifically a satellite and security equipment shop. The space features clean, organized shelving displaying neatly arranged digital receivers, cables, and security cameras. The room is illuminated by bright, high-key fluorescent lighting that creates a clinical yet welcoming modern aesthetic. The color palette incorporates cool whites, technical greys, and subtle hints of brand blue, projecting reliability and expert service." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAOmVV3wnDAWFKqmpmncXSnjMeYg8JWWonbZF2Y9d1HIxtsHXWa3KSSZ1BlUf3hXSkH2Sy6_0MapLGsBEoZIo80l5G3Mj7LQvJ080exdybLR5pDbRL6ITVAeh2bPVDj6rSOp2ckqhyXRP_f4oLItd9N1TKWyS4b9mk5pkwB-Qsr_vAK8RTMcXMXsvQn5ZVOGvonhpwXjbAs2L2OqdHgFPZ_R90IIZpoGaXvOvCPf84k1w-4ZLr3xgtc')"></div>
+</div>
+</div>
+</section>
+<!-- AI Assistant Button (Floating) -->
+<button class="fixed bottom-24 right-4 md:right-8 z-50 bg-primary w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-white hover:scale-110 transition-transform focus:outline-none group">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<!-- Pulse Effect -->
+<span class="absolute inset-0 rounded-full bg-primary opacity-50 animate-ping"></span>
+</button>
+</main>
+<!-- Bottom Navigation (Mobile) -->
+<nav class="md:hidden bg-surface-container-highest shadow-2xl border-t border-outline-variant/30 docked full-width bottom-0 z-50 rounded-t-xl fixed left-0 w-full flex justify-around items-center h-16">
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high w-full h-full p-2 transition-all" href="#">
+<span class="material-symbols-outlined mb-1">chat</span>
+<span class="font-label-sm text-label-sm">WhatsApp</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high w-full h-full p-2 transition-all" href="#">
+<span class="material-symbols-outlined mb-1">call</span>
+<span class="font-label-sm text-label-sm">Позвонить</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="bg-surface-container-low flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto mb-16 md:mb-0">
+<div class="font-headline-md font-bold text-on-surface mb-6 md:mb-0 text-center md:text-left">
+            Electro<span class="text-primary">Sat</span>
+<div class="font-body-md text-body-md text-on-surface-variant mt-2 text-sm">© 2024 ElectroSat. Все права защищены.</div>
+</div>
+<div class="flex flex-wrap justify-center gap-4 font-label-md text-label-md">
+<a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-4" href="#">О компании</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-4" href="#">Услуги</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-4" href="#">Доставка и оплата</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-4" href="#">Гарантия</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-4" href="#">Контакты</a>
+</div>
+</footer>
+</body></html>

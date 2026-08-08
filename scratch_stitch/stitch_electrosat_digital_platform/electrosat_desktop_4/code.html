@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ElectroSat - Каталог товаров</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Sora:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#ffb59b",
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#f2f3ff",
+                      "tertiary": "#8e2d00",
+                      "on-secondary-fixed-variant": "#35466f",
+                      "surface-container-highest": "#e1e2ed",
+                      "surface": "#faf8ff",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed-variant": "#822800",
+                      "tertiary-fixed": "#ffdbcf",
+                      "on-primary-container": "#dfe4ff",
+                      "error": "#ba1a1a",
+                      "inverse-surface": "#2e3039",
+                      "inverse-on-surface": "#f0f0fc",
+                      "primary": "#0045b7",
+                      "tertiary-container": "#b73c00",
+                      "on-tertiary-fixed": "#380d00",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#00174a",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-container": "#bdceff",
+                      "primary-container": "#095be8",
+                      "on-surface-variant": "#424655",
+                      "primary-fixed-dim": "#b3c5ff",
+                      "on-primary": "#ffffff",
+                      "background": "#faf8ff",
+                      "surface-dim": "#d9d9e5",
+                      "outline": "#737686",
+                      "surface-container": "#ededf9",
+                      "secondary": "#4d5e88",
+                      "on-background": "#191b24",
+                      "on-primary-fixed-variant": "#003ea7",
+                      "surface-bright": "#faf8ff",
+                      "surface-variant": "#e1e2ed",
+                      "on-secondary-fixed": "#051a41",
+                      "on-tertiary-container": "#ffded3",
+                      "inverse-primary": "#b3c5ff",
+                      "secondary-fixed-dim": "#b4c6f6",
+                      "outline-variant": "#c3c6d7",
+                      "surface-tint": "#0053d9",
+                      "error-container": "#ffdad6",
+                      "on-surface": "#191b24",
+                      "primary-fixed": "#dbe1ff",
+                      "surface-container-high": "#e7e7f3",
+                      "secondary-fixed": "#d9e2ff",
+                      "on-secondary-container": "#465781"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "margin-desktop": "64px",
+                      "section-gap": "80px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "card-padding": "24px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Manrope"
+                      ],
+                      "headline-lg": [
+                              "Sora"
+                      ],
+                      "headline-md": [
+                              "Sora"
+                      ],
+                      "body-lg": [
+                              "Manrope"
+                      ],
+                      "label-md": [
+                              "Manrope"
+                      ],
+                      "label-sm": [
+                              "Manrope"
+                      ],
+                      "display-lg-mobile": [
+                              "Sora"
+                      ],
+                      "display-lg": [
+                              "Sora"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .ambient-shadow {
+            box-shadow: 0px 4px 20px rgba(15, 23, 42, 0.05);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 8px 24px rgba(15, 23, 42, 0.08);
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="fixed bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md shadow-sm docked full-width top-0 z-50 transition-all duration-300 w-full" id="main-header">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<a class="font-display-lg text-display-lg-mobile md:text-display-lg font-bold text-on-background dark:text-surface-bright tracking-tight" href="#">
+                    Electro<span class="text-primary">Sat</span>
+</a>
+<nav class="hidden md:flex items-center gap-2">
+<a class="text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 transition-colors duration-200 px-4 py-1.5 rounded-full font-label-md text-label-md" href="#">Главная</a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 transition-colors duration-200 px-4 py-1.5 rounded-full font-label-md text-label-md" href="#">О компании</a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 transition-colors duration-200 px-4 py-1.5 rounded-full font-label-md text-label-md" href="#">Спутниковое ТВ</a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 transition-colors duration-200 px-4 py-1.5 rounded-full font-label-md text-label-md" href="#">Видеонаблюдение</a>
+<a class="bg-primary-container text-on-primary-container rounded-full px-4 py-1.5 font-label-md text-label-md font-semibold hover:scale-95 transition-transform active:scale-95" href="#">Каталог</a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 transition-colors duration-200 px-4 py-1.5 rounded-full font-label-md text-label-md" href="#">Услуги</a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-secondary-container/50 transition-colors duration-200 px-4 py-1.5 rounded-full font-label-md text-label-md" href="#">Контакты</a>
+</nav>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<div class="flex flex-col items-end">
+<a class="text-primary dark:text-primary-fixed-dim font-headline-md text-headline-md hover:opacity-80 transition-opacity" href="tel:+77471234567">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">call</span>
+                            +7 747 123 45 67
+                        </div>
+</a>
+<span class="text-label-sm text-on-surface-variant">Ежедневно 09:00-19:00</span>
+</div>
+</div>
+<button class="md:hidden text-on-surface p-2 rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar (Mobile Only) -->
+<div class="md:hidden fixed inset-y-0 left-0 z-[60] flex flex-col bg-surface dark:bg-surface-dim shadow-xl h-full w-72 transform -translate-x-full transition-transform duration-300" id="mobile-sidebar">
+<!-- Content omitted for brevity, logic handled in standard header for this mockup -->
+</div>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Categories -->
+<aside class="w-full md:w-64 flex-shrink-0 mb-8 md:mb-0">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Категории</h2>
+<nav class="flex flex-col gap-2">
+<a class="px-4 py-2 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold" href="#">Все товары</a>
+<a class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors" href="#">Спутниковое ТВ</a>
+<a class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors" href="#">Видеонаблюдение</a>
+<a class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors" href="#">Пульты ДУ</a>
+<a class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors" href="#">Кабель и разъёмы</a>
+<a class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors" href="#">Кронштейны</a>
+<a class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors" href="#">Бытовая техника</a>
+<a class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors" href="#">Аксессуары</a>
+</nav>
+</aside>
+<!-- Catalog Area -->
+<div class="flex-grow flex flex-col">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex text-label-sm text-on-surface-variant mb-4">
+<ol class="inline-flex items-center space-x-1 md:space-x-3">
+<li class="inline-flex items-center">
+<a class="hover:text-primary transition-colors" href="#">Главная</a>
+</li>
+<li>
+<div class="flex items-center">
+<span class="mx-2 text-outline">/</span>
+<span class="text-on-surface font-medium">Каталог</span>
+</div>
+</li>
+</ol>
+</nav>
+<!-- Header & Controls -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+<h1 class="font-display-lg-mobile md:font-headline-lg text-display-lg-mobile md:text-headline-lg font-bold text-on-surface">Каталог товаров</h1>
+<div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+<!-- Search -->
+<div class="relative w-full sm:w-64">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border border-outline-variant/50 rounded-xl bg-surface focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors text-body-md font-body-md text-on-surface placeholder-on-surface-variant/70" placeholder="Поиск товаров..." type="text"/>
+</div>
+<!-- Sort -->
+<div class="relative w-full sm:w-48">
+<select class="block w-full pl-3 pr-10 py-2 text-body-md font-body-md border border-outline-variant/50 rounded-xl bg-surface focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary appearance-none cursor-pointer">
+<option>Сначала популярные</option>
+<option>Сначала дешевые</option>
+<option>Сначала дорогие</option>
+<option>Новинки</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-on-surface-variant">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-gutter">
+<!-- Product Card 1 -->
+<a class="bg-surface-container-lowest rounded-xl p-card-padding flex flex-col ambient-shadow hover-lift group border border-outline-variant/20" href="#">
+<div class="aspect-square mb-4 relative overflow-hidden bg-white rounded-lg flex items-center justify-center p-4">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A clean, isolated studio photography shot of a modern black Samsung TV remote control lying flat on a pure white background. Bright, even lighting highlights the buttons and matte texture. Modern tech aesthetic, high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE2r5OylYz1o_a1wYFwOwM6H8reop8cqj6y6ebEXvg4Jz6D0WGOze8i8RtFuWccEiMOpF5AlCSQ4_Pdvf247qc8tYTG4U9_OB7uDPmVCISRmhGX8RjvGLzZHGnOUYbWO9NycReh9bGRymXBxUsbPVIJn7rnIA4ze3vA9-u8vnEBSX0ytlJH3uprpjiO2HxoU8WSI7oMhvi3Zzigvf_thzYDFaxcRXgzp7jkk60yqoXg_KefUFrZw_t"/>
+</div>
+<h3 class="font-body-md text-body-md text-on-surface line-clamp-2 mb-2 group-hover:text-primary transition-colors">Пульт для Samsung</h3>
+<div class="mt-auto">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">2 500 ₸</span>
+</div>
+</a>
+<!-- Product Card 2 -->
+<a class="bg-surface-container-lowest rounded-xl p-card-padding flex flex-col ambient-shadow hover-lift group border border-outline-variant/20" href="#">
+<div class="aspect-square mb-4 relative overflow-hidden bg-white rounded-lg flex items-center justify-center p-4">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A coil of professional RG6 coaxial cable, blue outer jacket, neatly wound. Shot in a bright studio environment against a pure white background. High fidelity product photography, sharp focus, modern industrial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEchvULd0mB8m3DffXr7GATzJ8juYONd3yyglUc5zoXTQ8TahVvTXiD0XX_x2HOf-XzrrOMdcyKQNXLiiy3ckVPomJglJReKzwjq89YCyr3rDrA9nbZ2ikPHrmRvNaKXIz_McaDwyPqamS1cnlvHZyfPDc1RLYFE3sCzV4_sMSPH6NfsRtEAhcsFxOjV7tnXEVr8mT7oiTVKlaDSfwDRB__Rtxc8C24vQO7s_tLHL0WnoSiZ25KNns"/>
+</div>
+<h3 class="font-body-md text-body-md text-on-surface line-clamp-2 mb-2 group-hover:text-primary transition-colors">Кабель RG6 (100м)</h3>
+<div class="mt-auto">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">7 500 ₸</span>
+</div>
+</a>
+<!-- Product Card 3 -->
+<a class="bg-surface-container-lowest rounded-xl p-card-padding flex flex-col ambient-shadow hover-lift group border border-outline-variant/20" href="#">
+<div class="aspect-square mb-4 relative overflow-hidden bg-white rounded-lg flex items-center justify-center p-4">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A white satellite dish antenna, 0.6 meters in diameter, with mounting bracket. Studio product shot, pure white background, soft drop shadow indicating depth. Clean, technical, precise aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlYiuKpmX4hrwVje9YaQeT0OFGUR7mUJFRIrUW7pnsa5L0daEmZkZkxj7JDbJO8YuMHmeYsIldFlCluGnIglzNOQteEcSNsDyiOPkp3Jv51p5S9ihAHhCuywyglnrphwEqVleXf76f3P4t0Wf0dIUrj1KfE3p8avdfzTgfu_mJVxHkbcOav-hzYxQn3YW1fQdKwcWsn-UWIXOizmUgSItw_5KmhjLRPNl-bfVgPpCnbXr6BzJDaQH1"/>
+</div>
+<h3 class="font-body-md text-body-md text-on-surface line-clamp-2 mb-2 group-hover:text-primary transition-colors">Спутниковая тарелка 0.6 м</h3>
+<div class="mt-auto">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">7 000 ₸</span>
+</div>
+</a>
+<!-- Product Card 4 -->
+<a class="bg-surface-container-lowest rounded-xl p-card-padding flex flex-col ambient-shadow hover-lift group border border-outline-variant/20" href="#">
+<div class="aspect-square mb-4 relative overflow-hidden bg-white rounded-lg flex items-center justify-center p-4">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A modern, white cylindrical outdoor IP security camera. Professional studio lighting, pure white background. High resolution product image showcasing the lens and sleek casing. Tech-focused, modern security aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAzwVItTfLkUwSG9ECtVBvqQ503aosJi3z86POTQX5q7Gsy4Vir52bY5E-UETbGIJ0ho1jsip2SRoFf3tswJMYlJ5HuELRyrZJB3Yo-PdZWzPT2jsaEdOp1zzOWfHEXtkC8y2NOlax-ReMCv5MCPcF759xat6ZFIgmWdmwUmobqFut89lNknfK9Uzdqic9Ek3tG9s8mrwF1XDBv_D8BK-Y_BQfL97wEqK0UqJ_u9ZlYeA3uQ2NhbSp"/>
+</div>
+<h3 class="font-body-md text-body-md text-on-surface line-clamp-2 mb-2 group-hover:text-primary transition-colors">IP камера уличная</h3>
+<div class="mt-auto">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">18 000 ₸</span>
+</div>
+</a>
+<!-- Product Card 5 -->
+<a class="bg-surface-container-lowest rounded-xl p-card-padding flex flex-col ambient-shadow hover-lift group border border-outline-variant/20" href="#">
+<div class="aspect-square mb-4 relative overflow-hidden bg-white rounded-lg flex items-center justify-center p-4">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A black, sleek digital satellite receiver box. Front view showing minimalist display and buttons. Pure white background, high-end consumer electronics studio photography. Crisp, modern, authoritative style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW9p8KtWCmtzNS58QVgl4vBomZ8lUdKr9BQn_HwblF7B3VnTcbtrOfDv5rgPltlkKGqaf4M-bg5lfupQDDN_EJCVG6DVk6o0omTGcC09Rl6N02RaB6DadlHAyThWrqjfLZVXt4lQ3l0McAniXYsAWKDzHl1mFdIM2FDVyV4O6dcjVcEtasaYnvVKObJBvzZigA670OZhZ-MugQWOH-ATTLtvoTThqnBE6c7g8bu3tkbWuMU-y28N1K"/>
+</div>
+<h3 class="font-body-md text-body-md text-on-surface line-clamp-2 mb-2 group-hover:text-primary transition-colors">Ресивер GS B528</h3>
+<div class="mt-auto">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">19 990 ₸</span>
+</div>
+</a>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 bg-surface dark:bg-surface-dim z-50 rounded-t-xl shadow-2xl border-t border-outline-variant/30">
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all p-2 rounded-lg active:bg-surface-container-high w-full h-full" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">chat</span>
+<span class="font-label-sm text-label-sm">WhatsApp</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold active:scale-90 transition-all p-2 rounded-lg active:bg-surface-container-high w-full h-full" href="tel:+77471234567">
+<span class="material-symbols-outlined text-2xl mb-1" style="font-variation-settings: 'FILL' 1;">call</span>
+<span class="font-label-sm text-label-sm">Позвонить</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest full-width border-t border-outline-variant/20 mt-auto hidden md:block">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<div class="mb-8 md:mb-0">
+<span class="font-headline-md font-bold text-on-surface">ElectroSat</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">© 2024 ElectroSat. Все права защищены.</p>
+</div>
+<div class="flex flex-wrap gap-6 justify-center md:justify-end">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-all" href="#">О компании</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Услуги</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Доставка и оплата</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Гарантия</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Контакты</a>
+</div>
+</div>
+</footer>
+</body></html>

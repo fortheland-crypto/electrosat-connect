@@ -1,0 +1,359 @@
+<!DOCTYPE html><html lang="ru"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ElectroSat - Видеонаблюдение</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline-variant": "#c3c6d7",
+                      "on-surface": "#131b2e",
+                      "on-background": "#131b2e",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed-dim": "#4ae176",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-low": "#f2f3ff",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#36466b",
+                      "inverse-on-surface": "#eef0ff",
+                      "surface-dim": "#d2d9f4",
+                      "on-primary-container": "#eeefff",
+                      "surface-tint": "#0053db",
+                      "tertiary": "#006229",
+                      "secondary-fixed": "#d9e2ff",
+                      "tertiary-fixed": "#6bff8f",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#283044",
+                      "secondary-container": "#c1d1fe",
+                      "on-tertiary-fixed": "#002109",
+                      "inverse-primary": "#b4c5ff",
+                      "tertiary-container": "#007e37",
+                      "on-primary-fixed": "#00174b",
+                      "surface-container": "#eaedff",
+                      "on-tertiary-container": "#c1ffc5",
+                      "primary-fixed": "#dbe1ff",
+                      "on-secondary-container": "#49597f",
+                      "primary-container": "#2563eb",
+                      "secondary": "#4e5e84",
+                      "surface": "#faf8ff",
+                      "on-surface-variant": "#434655",
+                      "surface-container-highest": "#dae2fd",
+                      "outline": "#737686",
+                      "surface-variant": "#dae2fd",
+                      "background": "#faf8ff",
+                      "on-secondary-fixed": "#071a3d",
+                      "secondary-fixed-dim": "#b6c6f2",
+                      "primary": "#004ac6",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed-variant": "#005321",
+                      "surface-bright": "#faf8ff",
+                      "surface-container-high": "#e2e7ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "card-padding": "24px",
+                      "gutter": "24px",
+                      "margin-desktop": "40px",
+                      "container-max": "1280px",
+                      "margin-mobile": "16px",
+                      "section-gap": "80px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Outfit"
+                      ],
+                      "body-lg": [
+                              "Manrope"
+                      ],
+                      "label-md": [
+                              "Manrope"
+                      ],
+                      "body-md": [
+                              "Manrope"
+                      ],
+                      "body-sm": [
+                              "Manrope"
+                      ],
+                      "headline-lg": [
+                              "Outfit"
+                      ],
+                      "price-display": [
+                              "Outfit"
+                      ],
+                      "display-lg": [
+                              "Outfit"
+                      ],
+                      "display-lg-mobile": [
+                              "Outfit"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "price-display": [
+                              "20px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased md:hidden pb-20 font-headline-md">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-background sticky top-0 w-full z-50 border-b border-outline-variant dark:border-outline shadow-sm flex justify-between items-center px-4 py-3 md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-primary dark:text-primary-fixed active:scale-95 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="text-headline-md font-headline-md font-bold text-on-surface dark:text-surface">
+                ElectroSat
+            </div>
+</div>
+<div class="text-primary dark:text-primary-fixed text-label-md font-label-md">
+            +7 747 123 45 67
+        </div>
+</header>
+<main class="px-margin-mobile pt-6 pb-section-gap space-y-section-gap">
+<!-- Hero Section -->
+<section class="space-y-4">
+<div class="text-sm text-on-surface-variant flex items-center gap-2">
+<span class="">Главная</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-on-surface">Видеонаблюдение</span>
+</div>
+<h1 class="text-display-lg-mobile font-display-lg-mobile text-on-surface">Видеонаблюдение</h1>
+<p class="text-body-lg font-body-lg text-on-surface">Монтаж и настройка систем для дома и бизнеса. Любой сложности.</p>
+</section>
+<!-- Features Bento Grid -->
+<section class="grid grid-cols-2 gap-4">
+<div class="bg-surface rounded-xl p-card-padding border border-outline-variant shadow-sm flex flex-col items-center text-center gap-3">
+<div class="bg-primary-container text-on-primary-container p-3 rounded-full">
+<span class="material-symbols-outlined">smartphone</span>
+</div>
+<h3 class="text-body-md font-body-md font-semibold text-on-surface">Удалённый просмотр</h3>
+</div>
+<div class="bg-surface rounded-xl p-card-padding border border-outline-variant shadow-sm flex flex-col items-center text-center gap-3">
+<div class="bg-primary-container text-on-primary-container p-3 rounded-full">
+<span class="material-symbols-outlined">videocam</span>
+</div>
+<h3 class="text-body-md font-body-md font-semibold text-on-surface">Запись 24/7 на регистратор</h3>
+</div>
+<div class="bg-surface rounded-xl p-card-padding border border-outline-variant shadow-sm flex flex-col items-center text-center gap-3">
+<div class="bg-primary-container text-on-primary-container p-3 rounded-full">
+<span class="material-symbols-outlined">notifications_active</span>
+</div>
+<h3 class="text-body-md font-body-md font-semibold text-on-surface">Уведомления на телефон</h3>
+</div>
+<div class="bg-surface rounded-xl p-card-padding border border-outline-variant shadow-sm flex flex-col items-center text-center gap-3">
+<div class="bg-primary-container text-on-primary-container p-3 rounded-full">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<h3 class="text-body-md font-body-md font-semibold text-on-surface">Гарантия и поддержка</h3>
+</div>
+</section>
+<!-- Popular Packages -->
+<section class="space-y-6">
+<h2 class="text-headline-md font-headline-md text-on-surface">Популярные комплекты</h2>
+<div class="flex overflow-x-auto gap-4 pb-4 snap-x">
+<!-- Package 1 -->
+<div class="min-w-[280px] bg-surface rounded-xl border border-outline-variant shadow-sm snap-center flex flex-col">
+<div class="p-6 flex justify-center items-center bg-surface-container-lowest h-48 rounded-t-xl">
+<img class="object-contain max-h-full" data-alt="A modern security camera system kit on a clean white background, featuring a sleek black DVR unit and two white bullet-style IP cameras. Professional studio lighting highlights the premium tech aesthetic. The setup implies a smart home or business security bundle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlWpIlgR3RhI2SLwO7Nh4zkzhcimaMKiOuMxp0xSGiMwbzeVLqPfBP6cbRbUOL5QIRkBh92sNoagO4LIj6_aHKN_kIE5ewZxm5G4bIJEqmeHwgNYgWNXgtSuYRCJqny8Z67lMJKBGUM3zjPJy2P-M26y_U1SzR3whWHnsTjPA0XpdfyPuLt7mImbHE9KuZ-82qKwfOfVLOaG-5IOnIpKQzTGJSaF8prTfl0fKPd6ggYWx_VeEqQDK3">
+</div>
+<div class="p-card-padding flex-1 flex flex-col justify-between border-t border-outline-variant">
+<div>
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface mb-2">Комплект на 2 камеры</h3>
+<ul class="text-body-sm font-body-sm space-y-1 mb-4 list-disc list-inside text-on-surface">
+<li class="">2 уличные камеры</li>
+<li class="">Видеорегистратор 4ch</li>
+<li class="">Блок питания</li>
+</ul>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-price-display font-price-display text-primary">от 65 000 ₸</span>
+</div>
+</div>
+</div>
+<!-- Package 2 -->
+<div class="min-w-[280px] bg-surface rounded-xl border border-outline-variant shadow-sm snap-center flex flex-col">
+<div class="p-6 flex justify-center items-center bg-surface-container-lowest h-48 rounded-t-xl">
+<img class="object-contain max-h-full" data-alt="A comprehensive 4-camera security system kit displayed on a pure white surface. It includes a central digital video recorder and four compact, modern security cameras with infrared sensors. Soft, diffused lighting creates a professional, trustworthy product presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACN5_VTPn0o8PBo6w3oGVsS-SeO5oK73ya-mjFIDN4sR8ZWtPEmCW1dL_UyJvaNAKvIWAqq8spKrEH2xOxQhhN6gF4HeAiB-O6XqjDmEoZtuQMoOYWEjkxeu0qpyknSiI2kr0OmjFwnVwzowUujUg9XmDvxMAuo-9EzwXoAPMnt554yKdKrd2VzVUWwCjpFI3DiVb5gsiP4TkS9hSP-WZD98jRsT_f_yAdYLFBMosOyaKQKEaB6v_v">
+</div>
+<div class="p-card-padding flex-1 flex flex-col justify-between border-t border-outline-variant">
+<div>
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface mb-2">Комплект на 4 камеры</h3>
+<ul class="text-body-sm font-body-sm space-y-1 mb-4 list-disc list-inside text-on-surface">
+<li class="">4 уличные камеры</li>
+<li class="">Видеорегистратор 4ch</li>
+<li class="">Блок питания, кабель</li>
+</ul>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-price-display font-price-display text-primary">от 110 000 ₸</span>
+</div>
+</div>
+</div>
+<!-- Package 3 -->
+<div class="min-w-[280px] bg-surface rounded-xl border border-outline-variant shadow-sm snap-center flex flex-col">
+<div class="p-6 flex justify-center items-center bg-surface-container-lowest h-48 rounded-t-xl">
+<img class="object-contain max-h-full" data-alt="An advanced 8-camera video surveillance package arranged systematically. The composition shows a large capacity NVR in the center surrounded by eight high-definition dome and bullet cameras. High-key lighting emphasizes clarity and premium quality in a tech retail style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHf2eCrSwVrcydD0cIpjec3ptYCgI9fcJx0zyh-IyaFMEI0QMOGW2nAJjMUSIG4jMLOjyZjAeMBY7An8o_2yLFS04oTw52CNgo0dkOQL3aTaUec6hbZIcDPW5HjrgwS-n4fKn35nBLhrp7EUWIuBxdQNXmnQy-96yMPLprgEWt9u0dnGgmgKc6K3o3IlX_CVgVPlanqjJxotIKyi8XvIV8_iAhtQZCwkH4nE3BYXVuq4Oe_xEC6uhH">
+</div>
+<div class="p-card-padding flex-1 flex flex-col justify-between border-t border-outline-variant">
+<div>
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface mb-2">Комплект на 8 камер</h3>
+<ul class="text-body-sm font-body-sm space-y-1 mb-4 list-disc list-inside text-on-surface">
+<li class="">8 камер (улица/дом)</li>
+<li class="">Видеорегистратор 8ch</li>
+<li class="">Полный монтажный набор</li>
+</ul>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-price-display font-price-display text-primary">от 180 000 ₸</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Equipment List -->
+<section class="space-y-6">
+<h2 class="text-headline-md font-headline-md text-on-surface">Оборудование</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm p-4 flex flex-col items-center text-center">
+<div class="h-24 flex items-center justify-center mb-3 w-full">
+<img class="object-contain max-h-full" data-alt="A close-up shot of a white outdoor IP security camera mounted on a minimal bracket against a crisp white background. The lens and infrared ring are clearly visible, conveying high-tech security and durability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9JnTyFxxpKUJ4XhciqFkTVwCPi8HHMyXS1Lgq_b1d_J_BLwBColWvPPoNGwGG59K5xg9ZlG4_p1pgdOOnILYj8LK3AD7bWaVaEXpOiGQVrG6Lt8dvRzzF9loFCXnU2eEEWYrR4H6AxPiWxOg2BpF_0UNMQ0SvXv_59b0dg3-ZYv7VY36NuhGWFHCFMbD0fy_KpRVvnbZAGuyRirsiosrlJsCWrXctmtjRGQmbwRJZ1RGl7aHB0QJ-">
+</div>
+<h4 class="text-body-sm font-body-sm text-on-surface mb-1">IP камера уличная</h4>
+<span class="text-label-md font-label-md text-primary mt-auto">18 000 ₸</span>
+</div>
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm p-4 flex flex-col items-center text-center">
+<div class="h-24 flex items-center justify-center mb-3 w-full">
+<img class="object-contain max-h-full" data-alt="A sleek, dome-style indoor Wi-Fi camera designed for home security, set on a seamless white surface. The minimalist design fits modern interiors, captured with bright, even lighting to highlight its smooth curves." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM5q4iWn2N4RLnEb-YbSxcsClGn2QHQc44he50ytFLDiI8B-M6HvVC9L33WROmSnL4ONLixDKjuBD_YuswnVEkbHn-UDYTBZUtONk066N_Qx9vE-0s1h_Q2D--JZlfx1s7ocE0MwgbSJlrp8GBawzatY2xIBufO8QSj5bEnkzg2CxTb9QmiJNtMqKyslmpFlJUZC2W8eGJno0oRGD36uWXsj19b4dJnDuXEW7EagLxB4t0lDrPl5bs">
+</div>
+<h4 class="text-body-sm font-body-sm text-on-surface mb-1">IP камера внутренняя</h4>
+<span class="text-label-md font-label-md text-primary mt-auto">16 000 ₸</span>
+</div>
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm p-4 flex flex-col items-center text-center">
+<div class="h-24 flex items-center justify-center mb-3 w-full">
+<img class="object-contain max-h-full" data-alt="A slim, black digital video recorder (DVR) for security systems, shown from a slight top angle to reveal front panel indicators and sleek casing. Professional tech product photography with soft shadows on a white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDejUOYoztcdevVlAp_Pp3lRFxn0L15HJLiDkB5XX7U4-Y2pM1hwtDcAu4oEm7Dj7IwB8BqStzAQQibsKSILBpquR4hVs7mEQaPm6oSkP0xnJ5jq-mzJVHQzcdCfmmpszZiNQErMepGIwxqdBpq1ANgnrhozcNKawQ5VSoOVPiUH-2QkwoXTcJisoQL9XxKyuXlrz1UI-OMda2iPieiQR2zeBWKwABSafUb1G89K26BwxY30Ks6uhZq">
+</div>
+<h4 class="text-body-sm font-body-sm text-on-surface mb-1">Видеорегистратор 8ch</h4>
+<span class="text-label-md font-label-md text-primary mt-auto">45 000 ₸</span>
+</div>
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm p-4 flex flex-col items-center text-center">
+<div class="h-24 flex items-center justify-center mb-3 w-full">
+<img class="object-contain max-h-full" data-alt="A specialized internal hard disk drive (HDD) optimized for 24/7 video surveillance recording, lying flat on a white studio background. The metallic casing and technical label are sharp and clear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-K2O13QrrgtWkdl3Vd5XSmy9nn14ci0nr82MpeeVFUJ48RkHSJjMXCwDAiGNBnm1ba7E719tSmIQLBOe2i_te68kegnPokkqb0RpdqsxG6nJSNbQH18rdBFHC2i6_Rk9xdrBDLVELwyuTUK0Pt56ShAwZgsTRjyYHO8yqvFw8K3bJtI06m8JEcxyB2E1QASPaSPZcxkyQ04JIkaHGGTIC79wrVnKiN9VRj81zck-rqd0iyiy8UP25">
+</div>
+<h4 class="text-body-sm font-body-sm text-on-surface mb-1">Жёсткий диск 1TB</h4>
+<span class="text-label-md font-label-md text-primary mt-auto">23 000 ₸</span>
+</div>
+</div>
+</section>
+<!-- CTA Banner -->
+<section class="bg-primary text-on-primary rounded-2xl p-6 shadow-lg flex flex-col gap-4">
+<div>
+<h2 class="text-headline-md font-headline-md font-bold mb-2">Бесплатный выезд и замер</h2>
+<p class="text-body-sm font-body-sm">Подберём оптимальное решение для вашего объекта.</p>
+</div>
+<button class="bg-on-primary text-primary font-label-md text-label-md py-3 px-6 rounded-full w-full flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">engineering</span>
+                Вызвать мастера
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface dark:bg-surface-container-high fixed bottom-0 w-full z-50 border-t border-outline-variant shadow-lg flex w-full md:hidden">
+<a class="flex-1 flex flex-col items-center justify-center py-2 text-on-surface-variant hover:brightness-90 active:scale-98" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-label-md font-label-md mt-1">WhatsApp</span>
+</a>
+<a class="flex-1 flex flex-col items-center justify-center py-2 text-on-surface-variant hover:brightness-90 active:scale-98" href="#">
+<span class="material-symbols-outlined">call</span>
+<span class="text-label-md font-label-md mt-1">Позвонить</span>
+</a>
+</nav>
+
+
+</body></html>

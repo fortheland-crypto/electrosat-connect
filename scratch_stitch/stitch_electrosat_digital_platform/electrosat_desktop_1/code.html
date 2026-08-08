@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ElectroSat - Спутниковое ТВ и Видеонаблюдение</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb59b",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f2f3ff",
+                        "tertiary": "#8e2d00",
+                        "on-secondary-fixed-variant": "#35466f",
+                        "surface-container-highest": "#e1e2ed",
+                        "surface": "#faf8ff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#822800",
+                        "tertiary-fixed": "#ffdbcf",
+                        "on-primary-container": "#dfe4ff",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#2e3039",
+                        "inverse-on-surface": "#f0f0fc",
+                        "primary": "#0045b7",
+                        "tertiary-container": "#b73c00",
+                        "on-tertiary-fixed": "#380d00",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#00174a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#bdceff",
+                        "primary-container": "#095be8",
+                        "on-surface-variant": "#424655",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "on-primary": "#ffffff",
+                        "background": "#faf8ff",
+                        "surface-dim": "#d9d9e5",
+                        "outline": "#737686",
+                        "surface-container": "#ededf9",
+                        "secondary": "#4d5e88",
+                        "on-background": "#191b24",
+                        "on-primary-fixed-variant": "#003ea7",
+                        "surface-bright": "#faf8ff",
+                        "surface-variant": "#e1e2ed",
+                        "on-secondary-fixed": "#051a41",
+                        "on-tertiary-container": "#ffded3",
+                        "inverse-primary": "#b3c5ff",
+                        "secondary-fixed-dim": "#b4c6f6",
+                        "outline-variant": "#c3c6d7",
+                        "surface-tint": "#0053d9",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#191b24",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container-high": "#e7e7f3",
+                        "secondary-fixed": "#d9e2ff",
+                        "on-secondary-container": "#465781"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "section-gap": "80px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "card-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Manrope", "sans-serif"],
+                        "headline-lg": ["Sora", "sans-serif"],
+                        "headline-md": ["Sora", "sans-serif"],
+                        "body-lg": ["Manrope", "sans-serif"],
+                        "label-md": ["Manrope", "sans-serif"],
+                        "label-sm": ["Manrope", "sans-serif"],
+                        "display-lg-mobile": ["Sora", "sans-serif"],
+                        "display-lg": ["Sora", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="bg-surface/80 shadow-sm docked full-width top-0 z-50 transition-all duration-300">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto hidden md:flex">
+<div class="font-display-lg-mobile md:font-display-lg md:text-display-lg font-bold text-on-background flex items-center gap-2">
+<span class="text-on-background">Electro</span><span class="text-primary">Sat</span>
+</div>
+<nav class="flex items-center gap-2 lg:gap-4">
+<a class="bg-primary-container text-on-primary-container rounded-full px-4 py-1.5 font-semibold font-label-md text-label-md transition-all duration-300 hover:bg-secondary-container/50 scale-95 transition-transform" href="#">Главная</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 transition-all duration-300" href="#">О компании</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 transition-all duration-300" href="#">Спутниковое ТВ</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 transition-all duration-300" href="#">Видеонаблюдение</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 transition-all duration-300" href="#">Каталог</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 transition-all duration-300" href="#">Услуги</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 transition-all duration-300" href="#">Контакты</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md font-bold text-on-background">+7 747 123 45 67</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ежедневно 09:00-19:00</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Side Navigation (Mobile) -->
+<div class="md:hidden fixed inset-y-0 left-0 z-[60] flex flex-col bg-surface docked h-full w-72 shadow-xl transform -translate-x-full transition-transform duration-300" id="mobile-menu">
+<div class="p-6 flex flex-col items-start border-b border-outline-variant/30">
+<div class="font-headline-md font-bold text-on-background flex items-center gap-2 mb-2">
+<span>Electro</span><span class="text-primary">Sat</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Технологии комфорта</span>
+</div>
+<nav class="flex-1 overflow-y-auto py-4">
+<a class="flex items-center gap-4 px-6 py-3 bg-primary-container text-on-primary-container font-bold rounded-r-full mr-4 mb-2 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+                Главная
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant hover:bg-surface-container-high hover:translate-x-1 transition-transform rounded-r-full mr-4 mb-2 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+                О компании
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant hover:bg-surface-container-high hover:translate-x-1 transition-transform rounded-r-full mr-4 mb-2 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="satellite_alt">satellite_alt</span>
+                Спутниковое ТВ
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant hover:bg-surface-container-high hover:translate-x-1 transition-transform rounded-r-full mr-4 mb-2 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="videocam">videocam</span>
+                Видеонаблюдение
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant hover:bg-surface-container-high hover:translate-x-1 transition-transform rounded-r-full mr-4 mb-2 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+                Каталог
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant hover:bg-surface-container-high hover:translate-x-1 transition-transform rounded-r-full mr-4 mb-2 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="build">build</span>
+                Услуги
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant hover:bg-surface-container-high hover:translate-x-1 transition-transform rounded-r-full mr-4 mb-2 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+                Контакты
+            </a>
+</nav>
+<div class="p-6 border-t border-outline-variant/30">
+<button class="w-full bg-[#16C85B] text-white rounded-full py-3 font-label-md text-label-md font-bold flex justify-center items-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-white" data-icon="chat">chat</span>
+                WhatsApp Помощь
+            </button>
+</div>
+</div>
+<!-- Mobile Header Trigger (for side nav) -->
+<div class="md:hidden flex justify-between items-center px-margin-mobile py-4 bg-surface shadow-sm sticky top-0 z-40">
+<div class="font-display-lg-mobile font-bold text-on-background flex items-center gap-1 text-2xl">
+<span>Electro</span><span class="text-primary">Sat</span>
+</div>
+<button class="text-on-background p-2" id="menu-toggle">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 flex flex-col gap-8 md:gap-12">
+<!-- Hero Section -->
+<section class="bg-surface-container-low rounded-3xl overflow-hidden relative flex flex-col md:flex-row items-center shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
+<div class="w-full md:w-1/2 p-8 md:p-16 z-10 flex flex-col items-start">
+<span class="bg-primary text-white font-label-sm text-label-sm px-4 py-1.5 rounded-full mb-6 font-bold uppercase tracking-wider">Магазин в ТД «Арман»</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-6 leading-tight">
+                    Спутниковое ТВ и <br class="hidden md:block"/>видеонаблюдение <br/>
+<span class="text-primary">в Сатпаеве и Жезказгане</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
+                    Продажа, установка и настройка. Все операторы и оборудование. Качество, гарантия и поддержка.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-[#16C85B] hover:bg-[#13b050] text-white rounded-full px-8 py-4 font-label-md text-label-md font-bold flex items-center gap-2 transition-colors shadow-md hover:shadow-lg hover:-translate-y-0.5 duration-200">
+<span class="material-symbols-outlined text-white" data-icon="chat">chat</span>
+                        Написать в WhatsApp
+                    </button>
+<button class="bg-primary hover:bg-primary-fixed-variant text-white rounded-full px-8 py-4 font-label-md text-label-md font-bold flex items-center gap-2 transition-colors shadow-md hover:shadow-lg hover:-translate-y-0.5 duration-200">
+<span class="material-symbols-outlined text-white" data-icon="build">build</span>
+                        Вызвать мастера
+                    </button>
+</div>
+</div>
+<div class="w-full md:w-1/2 h-64 md:h-auto min-h-[400px] md:absolute md:right-0 md:top-0 md:bottom-0 rounded-b-3xl md:rounded-bl-none md:rounded-r-3xl overflow-hidden">
+<div class="w-full h-full bg-cover bg-center absolute inset-0" data-alt="A highly realistic, bright, and modern composition showing a sleek satellite dish and a high-tech white CCTV camera mounted on a textured grey concrete wall. In the blurred background, a clear daytime cityscape of a modern town under a bright blue sky. The lighting is natural, crisp, and conveys a sense of professional installation and reliable technology. Corporate modern aesthetic, 8k resolution." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFiKoeeNlp2iQOq6GxNXDfw3ccIH4PTPDzQDzB_fgkHvyUydH4p1gpB-CQDxYZ0xWHWinNK3tLsvksRtADlm03GfQFL2U4TD3_kLQk9t0q3pu_H4-evkWiEqtqpMa6fQzDmX7gy-TDBgHwmXHHQkilg72WARa60-Hrwk1DMazfXbZ-GbmwLTChDo3ZMJ0eChHY0haABXOpwAue8R7TMGSXo4NIMIpGM0-8WSa9n0YTHXtYb7Y0vVSt')"></div>
+<!-- Decorative gradient overlay for text readability if needed on smaller screens -->
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-low via-surface-container-low/50 to-transparent hidden md:block"></div>
+</div>
+</section>
+<!-- Services Preview Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Satellite Service Card -->
+<div class="bg-surface rounded-3xl p-card-padding md:p-8 flex flex-col md:flex-row items-center gap-6 shadow-[0px_4px_20px_rgba(15,23,42,0.05)] hover:-translate-y-1 hover:shadow-[0px_8px_30px_rgba(15,23,42,0.08)] transition-all duration-300">
+<div class="w-40 h-40 shrink-0 bg-surface-container flex justify-center items-center rounded-2xl p-4">
+<img alt="Спутниковое оборудование" class="object-contain w-full h-full mix-blend-multiply" data-alt="A clean, studio-lit product shot of a modern white satellite dish and a black receiver box with a remote control, placed neatly on a solid light grey surface. The lighting is soft and professional, highlighting the product details with a modern tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3Sf8hLYY-kRNj7c87Btz0t_4-FR7pCK_mNpV94vu8LFIf0N4nsDJFIkQZvnRSnUOtJQfVImbAJ6FAttUWT5a7XnrUTBkZ2Y1Odc_2Qa6ud6tei1d4oyV3KKv4G6wRV-fxw6wiB8cQ62rBvrP2GXd_B4O7AkOWSN_L0F_xDAPq4_hBCUmKqOm0xgnwF2cR79fUYoPiLJy-8xGo6-kkgvSFgaH4-KMPDNGuUZtqXUOoBUJS3b1hTHLw"/>
+</div>
+<div class="flex flex-col items-start text-left">
+<h3 class="font-headline-md text-headline-md text-on-background mb-3">Спутниковое ТВ</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Все операторы: OTAU TV, НТВ-Плюс, Триколор, Телекарта, МТС, Alma TV. Продление подписок и настройка.
+                    </p>
+<button class="text-primary font-label-md text-label-md font-bold px-6 py-2.5 rounded-full border border-primary/30 hover:bg-primary-container transition-colors">
+                        Подробнее
+                    </button>
+</div>
+</div>
+<!-- CCTV Service Card -->
+<div class="bg-surface rounded-3xl p-card-padding md:p-8 flex flex-col md:flex-row items-center gap-6 shadow-[0px_4px_20px_rgba(15,23,42,0.05)] hover:-translate-y-1 hover:shadow-[0px_8px_30px_rgba(15,23,42,0.08)] transition-all duration-300">
+<div class="w-40 h-40 shrink-0 bg-surface-container flex justify-center items-center rounded-2xl p-4">
+<img alt="Оборудование для видеонаблюдения" class="object-contain w-full h-full mix-blend-multiply" data-alt="A clean, studio-lit product layout showing several modern white security cameras (dome and bullet styles) and a black digital video recorder (DVR) box. Arranged neatly on a light background, conveying professional security equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl_du3H8pb5V9Y0VKkSbSDjNflkr9Fa4BQcfO3uOQinoaNo9XiSxkJoM1oeubWJbw5lBM52AkMyDA0zh4rvLiokcbi80sMGPM8gbp6g1qNCbwNDFMOUUm5QYpYnjWnUzsi6-cKpfK2_icXL2dZnHIQodm_g1n8A5GxEnFWDUEYtI0FiaxEygCEIm5WBOJW7VMRaFcp20z8LnMCiiuZq2DuznigyRbCH5HnWX9rV_izCDg16VHSjuDy"/>
+</div>
+<div class="flex flex-col items-start text-left">
+<h3 class="font-headline-md text-headline-md text-on-background mb-3">Видеонаблюдение</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Монтаж уличных и внутренних камер IP и Wi-Fi. Онлайн-просмотр с телефона. Под ключ с гарантией.
+                    </p>
+<button class="text-primary font-label-md text-label-md font-bold px-6 py-2.5 rounded-full border border-primary/30 hover:bg-primary-container transition-colors">
+                        Подробнее
+                    </button>
+</div>
+</div>
+</section>
+<!-- Store Banner Section -->
+<section class="bg-[#00174A] rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-lg">
+<div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center items-start text-white">
+<h2 class="font-headline-lg text-headline-lg font-bold mb-4">Посетите наш магазин в ТД «Арман»</h2>
+<p class="font-body-lg text-body-lg text-white/80 mb-8">
+                    Большой выбор оборудования в наличии по лучшим ценам.
+                </p>
+<button class="bg-primary hover:bg-primary-fixed-variant text-white rounded-full px-8 py-3.5 font-label-md text-label-md font-bold transition-colors">
+                    Перейти в магазин
+                </button>
+</div>
+<div class="w-full md:w-1/2 h-64 md:h-auto">
+<div class="w-full h-full bg-cover bg-center" data-alt="A brightly lit interior view of a modern electronics retail store. Shelves are neatly stocked with satellite receivers, cables, cameras, and accessories. The store is clean, organized, with a professional blue and white color scheme. Warm, inviting retail lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmWHlvO0ZVHOMJhfuZQOAYc1f32UjF1OMBj5GNQJOhTMOJOVzJ0Zt6WcESEmXKMNMSkjZF2_P2oui6tM8VzMbgze-76nAtyY8lSLW9lgMw1MyzUy1oomJVoKZCDpbDS5smLNSC8BeYky9PIBLtlI56RkvC1xW9T7MvY0WoxupSMIARi3o68oBBHlNiNS1Zc34hH-c70S59U1x-TYoMDATvED4l4tj_PBS0sG005FGXpB-rRaMajCMY')"></div>
+</div>
+</section>
+<!-- Contacts & Location Section -->
+<section class="bg-surface rounded-3xl p-6 md:p-8 flex flex-col lg:flex-row gap-8 shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
+<!-- Contact Info Cards -->
+<div class="w-full lg:w-1/2 flex flex-col">
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-background mb-8">Контакты и адрес</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1">
+<div class="bg-surface-container-low rounded-2xl p-6 flex flex-col items-start border border-outline-variant/20">
+<div class="flex items-center gap-3 mb-4 text-on-surface-variant">
+<span class="material-symbols-outlined">schedule</span>
+<span class="font-label-md text-label-md font-bold">График работы</span>
+</div>
+<p class="font-body-md text-body-md text-on-background">Ежедневно<br/>09:00 – 19:00</p>
+</div>
+<div class="bg-surface-container-low rounded-2xl p-6 flex flex-col items-start border border-outline-variant/20">
+<div class="flex items-center gap-3 mb-4 text-on-surface-variant">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-label-md text-label-md font-bold">Адрес</span>
+</div>
+<p class="font-body-md text-body-md text-on-background">ТД «Арман», 1 этаж<br/>г. Сатпаев</p>
+</div>
+<div class="bg-surface-container-low rounded-2xl p-6 flex flex-col items-start border border-outline-variant/20 sm:col-span-2 md:col-span-1">
+<div class="flex items-center gap-3 mb-4 text-on-surface-variant">
+<span class="material-symbols-outlined">call</span>
+<span class="font-label-md text-label-md font-bold">Позвоните нам</span>
+</div>
+<p class="font-body-md text-body-md text-on-background font-bold text-lg">+7 747 123 45 67</p>
+</div>
+</div>
+</div>
+<!-- Map Area -->
+<div class="w-full lg:w-1/2 h-80 lg:h-auto min-h-[300px] rounded-2xl overflow-hidden relative border border-outline-variant/20">
+<div class="w-full h-full bg-cover bg-center" data-alt="A stylized, modern digital map view centered on a city layout with soft grey and green tones. A prominent bright blue location pin marks a specific spot labeled 'ТД Арман'. The style is clean, UI-friendly, and resembles popular navigation apps." data-location="Сатпаев" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrLwMRvULSHnfaTm1xtR6yj4rmw-szq3cCbuW8tqo2EvU0eiLmd98jjGKSKg5cqGJ_HoZtKVKbgtw6rLsOl7L8zxAKnOubLpt4SDM1Yx9ABiSdHy3OkgOsGLY3Vf8KfXtkra878O37sS-wbSRq1zMljlWit0qr2p-9VOEnxc957Jr0YK5B2UQSF0jtAFTm5KgZeeRjNI6jk-SL9e43KAUNDU80n-wtOfyN1lclYk43NrV_K1O5w7JK')"></div>
+<div class="absolute bottom-6 right-6">
+<button class="bg-primary hover:bg-primary-fixed-variant text-white rounded-full px-6 py-3 font-label-md text-label-md font-bold flex items-center gap-2 shadow-lg transition-colors">
+<span class="material-symbols-outlined">directions</span>
+                        Построить маршрут в 2ГИС
+                     </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="bg-surface-container-highest flex justify-around items-center h-16 fixed bottom-0 left-0 w-full z-50 rounded-t-xl shadow-2xl border-t border-outline-variant/30 md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm text-label-sm w-full h-full active:bg-surface-container-high tap:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined mb-1 text-[#16C85B]" data-icon="chat">chat</span>
+            WhatsApp
+        </a>
+<div class="w-px h-8 bg-outline-variant/30"></div>
+<a class="flex flex-col items-center justify-center text-primary font-bold font-label-sm text-label-sm w-full h-full active:bg-surface-container-high tap:scale-90 transition-all" href="tel:+77471234567">
+<span class="material-symbols-outlined mb-1" data-icon="call">call</span>
+            Позвонить
+        </a>
+</nav>
+<!-- Footer -->
+<footer class="bg-surface-container-low full-width py-section-gap mt-12 pb-24 md:pb-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-8">
+<div class="font-headline-md font-bold text-on-surface flex items-center gap-2">
+<span>Electro</span><span class="text-primary">Sat</span>
+</div>
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md hover:underline underline-offset-4" href="#">О компании</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md hover:underline underline-offset-4" href="#">Услуги</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md hover:underline underline-offset-4" href="#">Доставка и оплата</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md hover:underline underline-offset-4" href="#">Гарантия</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md hover:underline underline-offset-4" href="#">Контакты</a>
+</div>
+<div class="flex items-center gap-4">
+<!-- Mock social icons -->
+<a class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">photo_camera</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-[#16C85B]/10 flex items-center justify-center text-[#16C85B] hover:bg-[#16C85B]/20 transition-colors" href="#">
+<span class="material-symbols-outlined">chat</span>
+</a>
+</div>
+</div>
+<div class="w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-8 text-center md:text-left">
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">© 2024 ElectroSat. Все права защищены.</p>
+</div>
+</footer>
+<script>
+        // Simple mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('-translate-x-full')) {
+                menu.classList.remove('-translate-x-full');
+            } else {
+                menu.classList.add('-translate-x-full');
+            }
+        });
+    </script>
+</body></html>

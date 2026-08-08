@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, ShieldCheck, Wrench, Tv, Radio } from "lucide-react";
+import { MessageCircle, Wrench, ShieldCheck, Tv, Radio } from "lucide-react";
 
 import heroImg from "@/assets/hero.jpg";
 import { Button } from "@/components/ui/button";
@@ -6,65 +6,57 @@ import { site, waLink } from "@/config/site";
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden border-b border-border bg-background">
-      <img
-        src={heroImg}
-        alt="Мастер ElectroSat у фасада частного дома со спутниковой антенной и видеонаблюдением"
-        width={1600}
-        height={1104}
-        fetchPriority="high"
-        className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
-      />
-      <div
-        className="absolute inset-0 -z-10 bg-gradient-to-r from-background/96 via-background/90 to-background/50"
-      />
+    <section className="mx-auto max-w-[1280px] px-4 md:px-8 py-6">
+      <div className="relative overflow-hidden rounded-3xl bg-secondary/80 border border-border/40 shadow-[0px_4px_20px_rgba(15,23,42,0.05)] flex flex-col md:flex-row items-center">
+        {/* Text Content */}
+        <div className="w-full md:w-1/2 p-8 md:p-12 z-10 flex flex-col items-start">
+          <span className="bg-primary text-white text-xs px-4 py-1.5 rounded-full mb-6 font-bold uppercase tracking-wider shadow-xs">
+            Магазин в ТД «Арман» • Сатпаев &amp; Жезказган
+          </span>
 
-      <div className="mx-auto max-w-7xl px-4 py-14 md:py-20 lg:px-8 lg:py-24">
-        <div className="max-w-2xl animate-rise">
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-foreground shadow-xs backdrop-blur-md">
-            <span className="size-2 rounded-full bg-whatsapp animate-pulse" />
-            <span>Магазин и выезд мастеров в Сатпаеве и Жезказгане</span>
-          </div>
-
-          <h1 className="mt-5 text-balance font-display text-3xl font-black text-slate-900 leading-[1.15] tracking-tight sm:text-5xl lg:text-5xl">
-            Спутниковое ТВ и видеонаблюдение
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold text-foreground mb-6 leading-tight">
+            Спутниковое ТВ и видеонаблюдение <br />
+            <span className="text-primary">в Сатпаеве и Жезказгане</span>
           </h1>
 
-          <p className="mt-3 font-sans text-base font-semibold text-primary sm:text-lg">
-            Установка, настройка, продажа оборудования и продление подписок
+          <p className="font-sans text-base md:text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
+            Продажа, установка и настройка. Все операторы спутникового ТВ, монтаж уличных IP-камер, пульты и кабели. Качество, гарантия и поддержка мастера.
           </p>
 
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-700">
-            Официальный отдел в ТД «Арман» (г. Сатпаев). Настройка OTAU TV, НТВ, Триколор, Телекарта. Монтаж уличных IP-камер. Продажа пультов, кабелей и аксессуаров.
-          </p>
-
-          <div className="mt-7 flex flex-wrap gap-3">
-            <Button asChild variant="whatsapp" size="xl" className="shadow-md">
+          <div className="flex flex-wrap gap-4 w-full sm:w-auto">
+            <Button asChild variant="whatsapp" size="xl" className="rounded-full px-8 py-4 font-bold shadow-md text-base w-full sm:w-auto">
               <a href={waLink()} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="size-5" /> Консультация в WhatsApp
+                <MessageCircle className="size-5" /> Написать в WhatsApp
               </a>
             </Button>
-            <Button asChild variant="outline" size="xl" className="bg-white/90 shadow-xs">
+            <Button asChild variant="default" size="xl" className="rounded-full px-8 py-4 font-bold shadow-md text-base w-full sm:w-auto">
               <a href={site.phoneHref}>
-                <Phone className="size-4 text-primary" /> Позвонить мастеру
+                <Wrench className="size-5" /> Вызвать мастера
               </a>
             </Button>
           </div>
 
-          <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-slate-200/80 pt-6 text-xs font-medium text-slate-700">
-            <div className="flex items-center gap-2">
-              <ShieldCheck className="size-4 text-primary" />
-              <span>Гарантия на оборудование</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Wrench className="size-4 text-primary" />
-              <span>Быстрый выезд мастера</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Tv className="size-4 text-primary" />
-              <span>Все операторы ТВ</span>
-            </div>
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-semibold text-muted-foreground border-t border-border/40 pt-4 w-full">
+            <span className="flex items-center gap-1.5">
+              <ShieldCheck className="size-4 text-primary" /> Гарантия на монтаж
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Tv className="size-4 text-primary" /> Все операторы ТВ
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Radio className="size-4 text-primary" /> Выезд по региону
+            </span>
           </div>
+        </div>
+
+        {/* Hero Image Block */}
+        <div className="w-full md:w-1/2 h-72 md:h-auto min-h-[380px] md:absolute md:right-0 md:top-0 md:bottom-0 rounded-b-3xl md:rounded-bl-none md:rounded-r-3xl overflow-hidden">
+          <img
+            src={heroImg}
+            alt="ElectroSat — Спутниковое ТВ и видеонаблюдение"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 via-secondary/40 to-transparent hidden md:block" />
         </div>
       </div>
     </section>

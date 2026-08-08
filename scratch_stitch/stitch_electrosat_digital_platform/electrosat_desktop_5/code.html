@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Пульт для Samsung - ElectroSat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb59b",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f2f3ff",
+                        "tertiary": "#8e2d00",
+                        "on-secondary-fixed-variant": "#35466f",
+                        "surface-container-highest": "#e1e2ed",
+                        "surface": "#faf8ff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#822800",
+                        "tertiary-fixed": "#ffdbcf",
+                        "on-primary-container": "#dfe4ff",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#2e3039",
+                        "inverse-on-surface": "#f0f0fc",
+                        "primary": "#0045b7",
+                        "tertiary-container": "#b73c00",
+                        "on-tertiary-fixed": "#380d00",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#00174a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#bdceff",
+                        "primary-container": "#095be8",
+                        "on-surface-variant": "#424655",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "on-primary": "#ffffff",
+                        "background": "#faf8ff",
+                        "surface-dim": "#d9d9e5",
+                        "outline": "#737686",
+                        "surface-container": "#ededf9",
+                        "secondary": "#4d5e88",
+                        "on-background": "#191b24",
+                        "on-primary-fixed-variant": "#003ea7",
+                        "surface-bright": "#faf8ff",
+                        "surface-variant": "#e1e2ed",
+                        "on-secondary-fixed": "#051a41",
+                        "on-tertiary-container": "#ffded3",
+                        "inverse-primary": "#b3c5ff",
+                        "secondary-fixed-dim": "#b4c6f6",
+                        "outline-variant": "#c3c6d7",
+                        "surface-tint": "#0053d9",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#191b24",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container-high": "#e7e7f3",
+                        "secondary-fixed": "#d9e2ff",
+                        "on-secondary-container": "#465781",
+                        "whatsapp": "#16C85B"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "section-gap": "80px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "card-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Manrope"],
+                        "headline-lg": ["Sora"],
+                        "headline-md": ["Sora"],
+                        "body-lg": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "display-lg-mobile": ["Sora"],
+                        "display-lg": ["Sora"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F8FAFC; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 4px 20px rgba(15, 23, 42, 0.05);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md shadow-sm docked full-width top-0 z-50 sticky">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg font-bold text-on-background dark:text-surface-bright flex items-center">
+                Electro<span class="text-primary">Sat</span>
+</div>
+<nav class="hidden md:flex items-center space-x-2">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">Главная</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">О компании</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">Спутниковое ТВ</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">Видеонаблюдение</a>
+<a class="bg-primary-container text-on-primary-container rounded-full px-4 py-1.5 font-semibold font-label-md text-label-md hover:bg-secondary-container/50 transition-all duration-300" href="#">Каталог</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">Услуги</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">Контакты</a>
+</nav>
+<div class="hidden md:flex items-center space-x-4">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">call</span>
+                    +7 747 123 45 67
+                </span>
+</div>
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8">
+<!-- Breadcrumb -->
+<nav class="mb-8 font-label-md text-label-md text-on-surface-variant flex items-center gap-2">
+<a class="hover:text-primary" href="#">Главная</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary" href="#">Каталог</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface">Пульт для Samsung</span>
+</nav>
+<!-- Product Details -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-section-gap">
+<!-- Gallery -->
+<div class="lg:col-span-7 flex flex-col gap-4">
+<div class="glass-card rounded-xl overflow-hidden aspect-square md:aspect-video flex items-center justify-center bg-surface-container-lowest relative">
+<img alt="Пульт для Samsung" class="object-contain w-full h-full p-8" data-alt="High quality studio photography of a modern Samsung TV remote control, sleek black design, professional lighting, isolated on white background, sharp focus, corporate technical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6uZ0V7nH5WCTZJn_Ph9gj7ALahINp5ZhMLgJHCmJKFywISrSlJxmnMvRkc_cExrwWDBXi3HOcCJpQN_0CxRkVUeFDDnVS8Zmqx72RTWQXT_HldDtFCRQG_1WpsdL16AA5iO8Dg78jYpbqX2ha_IXmEL_lqNABpBSofLHk2FSobaiYDiox9FzHfGtMyvlIWnX7NLQXOwNTHiXnoDtLaySidcbKrG3RWbTowfn1TH_23JSOiaaoyepl"/>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="glass-card rounded-lg overflow-hidden aspect-square flex items-center justify-center cursor-pointer border-2 border-primary">
+<img alt="Thumbnail 1" class="object-contain w-full h-full p-2" data-alt="Close up studio shot of the top half of a modern Samsung TV remote, showing power and number buttons, high contrast, crisp details, white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGTswzFpT350XEQSB0C72mbyAdeplD3ZWCcH6ISVfhXTHWd2kmd2zx2bmZJi0nzOnqT752rR8HBJdeXzJiNF2icuNQtzH7J3V3tqdjFy_qyqmqRZ3tFXjCihGB63YGN_wZrMk3Qenb1MTmgL-xeFq5blHgHUAUrcmQ9JGrC2JQckmir2KAtjnEMY3gyKv8mOuEziWg3lzaiVnu5blCeUUb5MLgiybOsMC12hgrIHqARZf59CCocDme"/>
+</div>
+<div class="glass-card rounded-lg overflow-hidden aspect-square flex items-center justify-center cursor-pointer hover:border-primary/50 border-2 border-transparent transition-colors">
+<img alt="Thumbnail 2" class="object-contain w-full h-full p-2" data-alt="Close up studio shot of the bottom half of a modern Samsung TV remote, showing volume and channel controls, high contrast, crisp details, white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_QdEtfqgnFsVa8yJG3zOqZoJxcVn166f7oM5mWYiJ19sGugun3qIsAGZKMU-qt989MaaL_X_eh-Jo3zvNoSMtldBdonkUP1cVdrxjRPdOYqp3faRKmWnaIdA3bYM0ExBfDeHjXDbDU8dGXGDI6talVTJnrfmnArcO_8Uf8LAQlQBgd42tQWZFMkgFdsIf4KV1y37mnSjBd4G1oGBRlTMUjR7ZqvUjKK7K1hHeZK1pJcqDL4xFFowP"/>
+</div>
+<div class="glass-card rounded-lg overflow-hidden aspect-square flex items-center justify-center cursor-pointer hover:border-primary/50 border-2 border-transparent transition-colors">
+<img alt="Thumbnail 3" class="object-contain w-full h-full p-2" data-alt="Side profile view of a slim modern Samsung TV remote, emphasizing thinness, sleek shadow, high key white background, professional product photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNzLgAdE7nqNcLIJSmNoZAgtnmO3GY_Aipo-wOBNrLtoF-B2IPfiT9boTTF6AJeRmz2u5db76rajYDPkDYDQ0jaZQrVGN8S1v8xjkolQCkl_4ePI9pJY0Bgu8IUcSp8LhbrEqbmEkKbkNb-yN1z8uoaGN-CW-0A40pv2io9l1aAjxqeu_gdbVWhmtQbxlfirzbi7HiqD1kEtpR5NmZeu1EZYRAzCtZiruFzQpaaHAlW7R-h7ykD5cu"/>
+</div>
+</div>
+</div>
+<!-- Info -->
+<div class="lg:col-span-5 flex flex-col glass-card rounded-xl p-card-padding">
+<div class="mb-6">
+<div class="flex items-center gap-3 mb-3">
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-whatsapp">check_circle</span>
+                            В наличии
+                        </span>
+<span class="text-outline text-label-sm font-label-sm">Арт: 847291</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4">Пульт для Samsung</h1>
+<div class="font-display-lg text-primary mb-6">
+                        12 900 ₸
+                    </div>
+</div>
+<div class="flex flex-col gap-3 mb-8">
+<button class="bg-whatsapp hover:bg-green-600 text-white font-label-md text-label-md py-4 px-6 rounded-full flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path></svg>
+                        Написать в WhatsApp
+                    </button>
+<button class="bg-primary hover:bg-primary-fixed-variant text-on-primary font-label-md text-label-md py-4 px-6 rounded-full flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg">
+<span class="material-symbols-outlined">call</span>
+                        Вызвать мастера
+                    </button>
+</div>
+<div class="border-t border-outline-variant/30 pt-6 mt-auto">
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">local_shipping</span>
+<span>Доставка по городу от 1000 ₸</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">verified_user</span>
+<span>Гарантия 12 месяцев</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Details Tabs -->
+<div class="glass-card rounded-xl p-card-padding mb-section-gap">
+<div class="flex border-b border-outline-variant/30 mb-6 gap-8 overflow-x-auto">
+<button class="pb-4 font-headline-md text-headline-md text-primary border-b-2 border-primary whitespace-nowrap">Описание</button>
+<button class="pb-4 font-headline-md text-headline-md text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Характеристики</button>
+<button class="pb-4 font-headline-md text-headline-md text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Комплектация</button>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant max-w-3xl leading-relaxed">
+<p class="mb-4">Универсальный оригинальный пульт дистанционного управления для телевизоров Samsung. Обеспечивает полное управление всеми функциями вашего ТВ, включая Smart TV, настройки изображения и звука.</p>
+<p>Эргономичный дизайн удобно лежит в руке, а интуитивно понятное расположение кнопок делает использование комфортным даже в темноте. Не требует сложной настройки — готов к работе сразу после установки батареек (если они не входят в комплект).</p>
+</div>
+</div>
+<!-- Similar Products -->
+<section>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8">Похожие товары</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="glass-card rounded-xl p-4 flex flex-col hover:shadow-lg transition-all hover:-translate-y-1 group">
+<div class="aspect-square bg-surface-container-lowest rounded-lg mb-4 flex items-center justify-center p-4 relative">
+<img alt="Пульт для LG" class="object-contain w-full h-full" data-alt="High quality studio shot of an LG TV remote control on white background, modern design, professional technical styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBdMmNnmL0T_BmQstPBB_Du41kV1r7f4bcMxHQGNzD7V_kqwGqCpickIhp50QFJp8cAmJrNsE7cojIjP-9cC7ol8JNzV5jLhd5qd63eTGdhQ6QgP7HXSleWP61eZh-F2YAG-zKknxUDGUDxwrQa48DTQzN8kmJtbjtj-Xp9RZAHf07q37grii7MZVZXRyFx-xqLZxmRNs0ssSBhfatCE0bT45BWzwFonb3tF24BK7soWxbpCeTRY3x"/>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface mb-2 line-clamp-2">Пульт для LG</h3>
+<div class="mt-auto font-label-md text-label-md font-bold">2 500 ₸</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-card rounded-xl p-4 flex flex-col hover:shadow-lg transition-all hover:-translate-y-1 group">
+<div class="aspect-square bg-surface-container-lowest rounded-lg mb-4 flex items-center justify-center p-4 relative">
+<img alt="Пульт для Artel" class="object-contain w-full h-full" data-alt="High quality studio shot of a generic Artel TV remote control on white background, standard layout, professional technical styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXVKYy3aY98pQCt4tN5eeHAVAxz77EIfnXJSFxlalldAoj7g7jUGnnGLmO16dPtdjrxWXGkV7RoPxOjEsBoK8Bm0KPtxQAFKUrx97XBdtkYkA-5x1bPt09NmzgQskzKQRM08sygLg1pEFjPi-MgqgzbIj2tKP2J2a2MXAngyTWMDLlW9ml1TvOAqq_zPdYYl6xFe2LN4L8QpzqaIesqTUi-mP3AgJP1Z5--JbiBXnyBpMvoD2cE5Rr"/>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface mb-2 line-clamp-2">Пульт для Artel</h3>
+<div class="mt-auto font-label-md text-label-md font-bold">2 500 ₸</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-card rounded-xl p-4 flex flex-col hover:shadow-lg transition-all hover:-translate-y-1 group">
+<div class="aspect-square bg-surface-container-lowest rounded-lg mb-4 flex items-center justify-center p-4 relative">
+<img alt="Универсальный пульт" class="object-contain w-full h-full" data-alt="High quality studio shot of a universal TV remote control on white background, multiple device buttons, professional technical styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4U46sdUSCtwc44WT4TgJUCbYkd9t6v7cMHh1rvWiQUAiSi0TotHAQKHzVf90oVSB4AAB3wsNQGLi0Ev28_6Bdn8AlzCi2NbtLhKTzg_x0p3wnKK78AxC53ZJnPMBPMzOQbQ5bO-yjRTLr_Lw6aCn2FGc74E9c1F9COS8U9hj2rS6d7umasAgy05zbeKHCHEt8IeuOPm3U3z0j_lk5Q0GXBRp4iZy9zLk43e2YXGc3jw3w1vFsctmk"/>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface mb-2 line-clamp-2">Универсальный пульт 10-в-1</h3>
+<div class="mt-auto font-label-md text-label-md font-bold">3 200 ₸</div>
+</div>
+<!-- Card 4 -->
+<div class="glass-card rounded-xl p-4 flex flex-col hover:shadow-lg transition-all hover:-translate-y-1 group">
+<div class="aspect-square bg-surface-container-lowest rounded-lg mb-4 flex items-center justify-center p-4 relative">
+<img alt="Smart TV Пульт" class="object-contain w-full h-full" data-alt="High quality studio shot of a smart TV remote with voice control microphone button, sleek minimalist design, white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjd9emfTTAiS-Ze9vO5NA0h8lI4tL22tUB6DS5dfmXaPsO1SB_wT9V7whbwdzJNUahdgiVcB2fqZ1jHWYajJ_zlGO1OpK9gjItXYm2PFR_RpCpyIe_FVP2X4VOCxzXaFRYj6d6ecqa6YFVR3yATyFg7nAMh0-b7b_KYu3UoJ01ldVveibuiDyVkugJwiiE5A-VLRApCM3nJ6NgJDPUIpDlmUKhCwSHl2YlgPzwL7PtFZejNdLZBxIm"/>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface mb-2 line-clamp-2">Smart TV Пульт с голосовым управлением</h3>
+<div class="mt-auto font-label-md text-label-md font-bold">8 500 ₸</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest mt-auto full-width flat no shadows">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<div class="font-headline-md font-bold text-on-surface mb-4 md:mb-0">
+                Electro<span class="text-primary">Sat</span>
+</div>
+<nav class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
+<a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-4 font-label-md text-label-md" href="#">О компании</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-4 font-label-md text-label-md" href="#">Услуги</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-4 font-label-md text-label-md" href="#">Доставка и оплата</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-4 font-label-md text-label-md" href="#">Гарантия</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline underline-offset-4 font-label-md text-label-md" href="#">Контакты</a>
+</nav>
+<div class="text-on-surface-variant font-body-md text-body-md text-center md:text-right">
+                © 2024 ElectroSat. Все права защищены.
+            </div>
+</div>
+</footer>
+<!-- BottomNavBar Mobile -->
+<nav class="bg-surface-container-highest dark:bg-surface-container-low shadow-lg border-t border-outline-variant/30 docked full-width bottom-0 z-50 rounded-t-xl md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 bg-surface dark:bg-surface-dim z-50">
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high hover:text-primary w-1/2 h-full">
+<span class="material-symbols-outlined text-[24px]">chat</span>
+<span class="font-label-sm text-label-sm mt-1">WhatsApp</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high hover:text-primary w-1/2 h-full">
+<span class="material-symbols-outlined text-[24px]">call</span>
+<span class="font-label-sm text-label-sm mt-1">Позвонить</span>
+</button>
+</nav>
+</body></html>

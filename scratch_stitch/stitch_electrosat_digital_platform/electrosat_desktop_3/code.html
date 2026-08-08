@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Спутниковое ТВ - ElectroSat</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Sora & Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#ffb59b",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f2f3ff",
+                    "tertiary": "#8e2d00",
+                    "on-secondary-fixed-variant": "#35466f",
+                    "surface-container-highest": "#e1e2ed",
+                    "surface": "#faf8ff",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#822800",
+                    "tertiary-fixed": "#ffdbcf",
+                    "on-primary-container": "#dfe4ff",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2e3039",
+                    "inverse-on-surface": "#f0f0fc",
+                    "primary": "#0045b7",
+                    "tertiary-container": "#b73c00",
+                    "on-tertiary-fixed": "#380d00",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#00174a",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#bdceff",
+                    "primary-container": "#095be8",
+                    "on-surface-variant": "#424655",
+                    "primary-fixed-dim": "#b3c5ff",
+                    "on-primary": "#ffffff",
+                    "background": "#faf8ff",
+                    "surface-dim": "#d9d9e5",
+                    "outline": "#737686",
+                    "surface-container": "#ededf9",
+                    "secondary": "#4d5e88",
+                    "on-background": "#191b24",
+                    "on-primary-fixed-variant": "#003ea7",
+                    "surface-bright": "#faf8ff",
+                    "surface-variant": "#e1e2ed",
+                    "on-secondary-fixed": "#051a41",
+                    "on-tertiary-container": "#ffded3",
+                    "inverse-primary": "#b3c5ff",
+                    "secondary-fixed-dim": "#b4c6f6",
+                    "outline-variant": "#c3c6d7",
+                    "surface-tint": "#0053d9",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#191b24",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container-high": "#e7e7f3",
+                    "secondary-fixed": "#d9e2ff",
+                    "on-secondary-container": "#465781",
+                    "brand-whatsapp": "#16C85B"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "section-gap": "80px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "card-padding": "24px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Manrope"
+                    ],
+                    "headline-lg": [
+                            "Sora"
+                    ],
+                    "headline-md": [
+                            "Sora"
+                    ],
+                    "body-lg": [
+                            "Manrope"
+                    ],
+                    "label-md": [
+                            "Manrope"
+                    ],
+                    "label-sm": [
+                            "Manrope"
+                    ],
+                    "display-lg-mobile": [
+                            "Sora"
+                    ],
+                    "display-lg": [
+                            "Sora"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        /* Soft ambient shadow for cards */
+        .ambient-shadow {
+            box-shadow: 0px 4px 20px rgba(15, 23, 42, 0.05);
+        }
+        /* Custom WhatsApp color class based on Style Guide explicit mention */
+        .bg-whatsapp {
+            background-color: #16C85B;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<header class="sticky top-0 z-50 w-full bg-surface/80 backdrop-blur-md shadow-sm transition-all duration-300 hidden md:block">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<a class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg font-bold text-on-background" href="#">
+                ElectroSat
+            </a>
+<!-- Navigation Links -->
+<nav class="hidden lg:flex items-center gap-2">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">Главная</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">О компании</a>
+<a class="bg-primary-container text-on-primary-container rounded-full px-4 py-1.5 font-semibold font-label-md text-label-md scale-95 transition-transform" href="#">Спутниковое ТВ</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">Видеонаблюдение</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">Каталог</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">Услуги</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">Контакты</a>
+</nav>
+<!-- Trailing Action -->
+<div class="hidden md:flex items-center">
+<a class="font-label-md text-label-md font-bold text-primary hover:text-primary-fixed-dim transition-colors" href="tel:+77471234567">
+                    +7 747 123 45 67
+                </a>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12 space-y-section-gap">
+<!-- Header Section -->
+<section class="space-y-6">
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="flex text-on-surface-variant font-label-md text-label-md">
+<ol class="flex items-center space-x-2">
+<li><a class="hover:text-primary transition-colors" href="#">Главная</a></li>
+<li><span class="mx-2">/</span></li>
+<li aria-current="page" class="text-on-background font-semibold">Спутниковое ТВ</li>
+</ol>
+</nav>
+<!-- Title & Subtitle -->
+<div class="max-w-3xl space-y-4">
+<h1 class="font-headline-lg text-headline-lg text-on-background">Спутниковое ТВ</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Подключение, настройка и продление подписок на популярных операторов.</p>
+</div>
+<!-- Operator Panel -->
+<div class="pt-6">
+<div class="flex overflow-x-auto pb-4 gap-6 md:gap-8 items-center scrollbar-hide">
+<img class="h-12 w-auto object-contain opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" data-alt="A minimalist, flat-design vector logo representing the OTAU TV telecommunications operator, set against a pure white background. The image is clean, sharp, and optimized for a modern, airy digital interface with a corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWDjPEjgDdCRvFkU4o_eDQ7kqgj33oUVkNY_vkzWRtam09-Zr02F93iCdcph9XfIa40t4hYMS1hCZQKHRJmXy2Dy0MxF0-Y7p-Xkuli-iy9zrxXvhHzsSFvmClwHdvQmXIci_8ryzlI8gtOVoH0W8nsapps_fjqQs3ONXH-SI48g1o2RlwkHDv4x0FX0cF5Z2vyCXaMz7lk2oEjhWNnIuzbtc_fqJ5E-kMrZAO90_OlyJlDlTb4cPP"/>
+<img class="h-10 w-auto object-contain opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" data-alt="A minimalist, flat-design vector logo representing the НТВ-Плюс telecommunications operator, set against a pure white background. The image is clean, sharp, and optimized for a modern, airy digital interface with a corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDZ4Y8IScA5eafYhJRoVHIa5vxPbC5bExvRVfg6n2O-pJiNxwEluy61F2w0_KIY38Ll_mxeTAw_4ugvs3twtIPUIv6MVkUx7ySEjTuUGQOpPikYeem8Gk2ntEPmADbPId3-PrIdtzcvYz-CEDStIdQiptLoT8WJ136fWGpCfwSIV0fnrVUAJRKXHJdofYMDZQDOfCZyrfH17p2zNHRdmuzyCE4ef_PTGwWB9DR5T4KUFnEfgkY-OWT"/>
+<img class="h-12 w-auto object-contain opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" data-alt="A minimalist, flat-design vector logo representing the Триколор telecommunications operator, set against a pure white background. The image is clean, sharp, and optimized for a modern, airy digital interface with a corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeNLFhiOjmxJBHsHn-eUBnifwqvsa-qP2QQeaTWiKk04lxiQBkxdIAbtQaOfbgWU8NubS9P-GRvDiXbDlueC82D7YvfxZI3cI_eZ8wH7wTehQF_rF84HAAFI34luKs-J3AlIy7I2TwH3yMfy5NW0cw91HbuMnfeAYF5R_yeuApj0_6HND9vJMqEicdCBClKV19-xCIYTO5ejeoMQZI5o6KURqjfdkDPKKjs_CJgdAruF8KYFVOUcLF"/>
+<img class="h-10 w-auto object-contain opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" data-alt="A minimalist, flat-design vector logo representing the Телекарта telecommunications operator, set against a pure white background. The image is clean, sharp, and optimized for a modern, airy digital interface with a corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJKLJ6mppV6wH4hwRACDelyXOJl-8KIEscLfqKfOTosOVRFwXitYRgFylTXvt7-CHc9Qt51w1hTUDa_O-R6zR_EnH0bEOwiydawXzGFKz6mOYGIB6MZQwF7BQW6YyT8XUzFZUBsDXnU-jZh8ysR7CrOPJlg9KA0JBwXTw3AUpOZtMsjZPyqdvBDpxWXVSR1T6290_n-mIgty8y786HMdSlE3Y8QBbC1mYO1krrqVcFIH8JZiPSUyPR"/>
+<img class="h-12 w-auto object-contain opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" data-alt="A minimalist, flat-design vector logo representing the МТС ТВ telecommunications operator, set against a pure white background. The image is clean, sharp, and optimized for a modern, airy digital interface with a corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdw-ChmNxtgGLW8PSqu7A7y_kXUUvR18hfn8BdfUxRL2Mv_Q2IUDd9YpvzmgTk3rthBVkiYdERUE-QulAxefOurhh7JZm_bDTRZhD4xaaiwG1F_c9OIp6V8b1ZdBDdDGbsyo0jVxV-u27Ep62-t3Bzlmw0uuQLxG15ZOCZHO5NmRffd0HGXyjTGHKRep9JcJXVBPYRjKxF7iZwG91qd4ge6Xt3E4fTHJYNZVxYJN-PF6_KgazdPa0U"/>
+<img class="h-10 w-auto object-contain opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" data-alt="A minimalist, flat-design vector logo representing the Alma TV telecommunications operator, set against a pure white background. The image is clean, sharp, and optimized for a modern, airy digital interface with a corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD47tJ6R4E_UmahLBrtjBTaDdnBEd0NZqjF-APYgdRDL-TCPlE4nH6sdzaopmzBN1MHIj6_RedXuEaCdgY7xz4y587VvoTWTFyPnYJx28HPYsA9eJwlGwRg7T2RyfAvencB-oi4OgKhzscROZxEXjvex9y-AlPD_iII2_91-Pql91AED4CXRAX4wmxDqWZuZ9Bah8UP-if7hL2fgKaqztr6a4_8viGXa4M5yU_gTFdCB9x6Sa_QjjUo"/>
+</div>
+</div>
+</section>
+<!-- Equipment Section -->
+<section class="space-y-8">
+<h2 class="font-headline-md text-headline-md text-on-background">Оборудование</h2>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-card-padding ambient-shadow hover:-translate-y-1 hover:shadow-md transition-all duration-300 flex flex-col group cursor-pointer border border-outline-variant/20">
+<div class="w-full aspect-square mb-4 bg-surface-container-low rounded-lg overflow-hidden flex items-center justify-center p-4">
+<img class="object-contain w-full h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A high-quality, studio-lit product photograph of a modern satellite TV receiver box and remote control resting on a clean, pristine white background. The equipment is sleek and black, featuring minimal buttons and a digital display. The lighting is bright and even, creating soft, diffused ambient shadows that ground the object, fitting perfectly into a clean, modern, and sophisticated light-mode corporate e-commerce interface designed for a premium technology service provider." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNDoJFl9S22naoEQbWALI2IKnKXvEmoe8gfbF28XrpX56T6elqrMZQI7q_-YZPeNUz2Lzud871zwCQNblmGCZZ7NDGPVB86AuwT12wd-3Ts3d-_yBe3Z9fg4X2GqYlnuFMzBXVMwtCfNnaJ5yTYSNgziAPB821-C0kkGPyiUacWU_i45r68NlzSRQUsKMz-EG9Z0-HpbmjDSTcePMEYUYQSdDl4ypEOkT3sVQW1zqzb9vECV8bxYEg"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<h3 class="font-label-md text-label-md text-on-background mb-2">Комплект OTAU TV</h3>
+<p class="font-headline-md text-body-md font-bold text-primary mt-auto">от 35 000 ₸</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-card-padding ambient-shadow hover:-translate-y-1 hover:shadow-md transition-all duration-300 flex flex-col group cursor-pointer border border-outline-variant/20">
+<div class="w-full aspect-square mb-4 bg-surface-container-low rounded-lg overflow-hidden flex items-center justify-center p-4">
+<img class="object-contain w-full h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A high-quality, studio-lit product photograph of a modern satellite TV receiver box resting on a clean, pristine white background. The equipment is sleek and black, featuring minimal buttons and a digital display. The lighting is bright and even, creating soft, diffused ambient shadows that ground the object, fitting perfectly into a clean, modern, and sophisticated light-mode corporate e-commerce interface designed for a premium technology service provider." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK6MP0OH_WcSNdLrSL4vFr1AXlV4fykZQHSVy8MhjvgG4u17stSPW1whXlZDGh5N9J6XxeiR1C1GDif8D_t_By7MpqNUlZ1F0t1p2aDS1cguw3tGxHOsKD1ZwV49AC_xFzlJdpkdaj3KJMk344WUMEFhxHmFci8svhgEqMLhL6KRLwz5Oa7mTHi-xckOC4BAyclwqZ8qzjRMKKaOnIDmhXSHRzvoO6n8hyR8V7yXjJN9Bl2_dqWA_z"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<h3 class="font-label-md text-label-md text-on-background mb-2">Ресивер HD 8528</h3>
+<p class="font-headline-md text-body-md font-bold text-primary mt-auto">19 990 ₸</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-card-padding ambient-shadow hover:-translate-y-1 hover:shadow-md transition-all duration-300 flex flex-col group cursor-pointer border border-outline-variant/20">
+<div class="w-full aspect-square mb-4 bg-surface-container-low rounded-lg overflow-hidden flex items-center justify-center p-4">
+<img class="object-contain w-full h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A high-quality, studio-lit product photograph of a modern white satellite dish resting on a clean, pristine white background. The equipment is sleek and professional. The lighting is bright and even, creating soft, diffused ambient shadows that ground the object, fitting perfectly into a clean, modern, and sophisticated light-mode corporate e-commerce interface designed for a premium technology service provider." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwvDmRIoTI_Dwm3T8A8L9IbI4ca3K9MAPweR79dm23jD2zp9vQQ3pJ-f1PkYWdrhKCz4WzD-UCMoVhPFg1NclhAeT8sgzP1c6ealbXsjFB4ueNVwsAHQ55JxOAAFodvB8Wp4KYtLlkRL2GEZ1gdT7kcwih40gwAC-I3g8l140uV96E7wKV4lppczn9pvVBpJFrDRwI-Jsl05oJ2DcqNcYF-Rym6Eld3yMraScQv6AW_LcQxzCVBHoe"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<h3 class="font-label-md text-label-md text-on-background mb-2">Тарелка 0.6 м</h3>
+<p class="font-headline-md text-body-md font-bold text-primary mt-auto">7 000 ₸</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-card-padding ambient-shadow hover:-translate-y-1 hover:shadow-md transition-all duration-300 flex flex-col group cursor-pointer border border-outline-variant/20">
+<div class="w-full aspect-square mb-4 bg-surface-container-low rounded-lg overflow-hidden flex items-center justify-center p-4">
+<img class="object-contain w-full h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A high-quality, studio-lit product photograph of a modern satellite LNB converter resting on a clean, pristine white background. The equipment is sleek and functional. The lighting is bright and even, creating soft, diffused ambient shadows that ground the object, fitting perfectly into a clean, modern, and sophisticated light-mode corporate e-commerce interface designed for a premium technology service provider." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn_uXh543nZYRF3WOHMtkxNOrj6Mx2Zb4_m4JpdOy3-OqtnHvDMcx7spNPScEWxHZBgwoOdvF_D7OGvLPMNz7cKxeuja0f5rCO2bSZxSf7MaEUHy4fFpDXKIQffdoOe0cK1lJ1bkY0Pbt-nhJveWXm8hQrJSJPboB4lTtgSH_6xdaZRxefJvwTWE9uBjekNYnDsasS2Jd0k8egLcXZB8Qp10L1hzuYbAnLGZyRflQf1puaPdCGAfNx"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<h3 class="font-label-md text-label-md text-on-background mb-2">Конвертер Twin</h3>
+<p class="font-headline-md text-body-md font-bold text-primary mt-auto">4 500 ₸</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Row -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-gutter">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 flex flex-col items-center text-center space-y-3 ambient-shadow">
+<div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-background">Официальное оборудование</h4>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 flex flex-col items-center text-center space-y-3 ambient-shadow">
+<div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-background">Быстрая установка</h4>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 flex flex-col items-center text-center space-y-3 ambient-shadow">
+<div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-background">Гарантия на работы</h4>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 flex flex-col items-center text-center space-y-3 ambient-shadow">
+<div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">headset_mic</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-background">Поддержка и консультации</h4>
+</div>
+</section>
+<!-- Bottom CTA Banner -->
+<section class="bg-surface-container p-8 md:p-12 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 ambient-shadow">
+<div class="text-center md:text-left space-y-2">
+<h3 class="font-headline-md text-headline-md text-on-background">Нужна помощь с выбором?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">Наши специалисты помогут подобрать лучшее решение под ваш бюджет.</p>
+</div>
+<button class="bg-whatsapp hover:bg-[#12a84c] text-white font-label-md text-label-md px-8 py-4 rounded-full flex items-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 whitespace-nowrap">
+<span class="material-symbols-outlined">chat</span>
+                Написать в WhatsApp
+            </button>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-low w-full mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="font-headline-md font-bold text-on-surface">ElectroSat</span>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 ElectroSat. Все права защищены.</p>
+</div>
+<nav class="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-colors" href="#">О компании</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-colors" href="#">Услуги</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-colors" href="#">Доставка и оплата</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-colors" href="#">Гарантия</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-colors" href="#">Контакты</a>
+</nav>
+</div>
+</footer>
+<!-- BottomNavBar (Shared Component - Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 bg-surface z-50 shadow-2xl border-t border-outline-variant/30 rounded-t-xl pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high w-full h-full transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">chat</span>
+<span class="font-label-sm text-label-sm">WhatsApp</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold active:bg-surface-container-high w-full h-full transition-colors" href="tel:+77471234567">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">call</span>
+<span class="font-label-sm text-label-sm">Позвонить</span>
+</a>
+</nav>
+<style>
+        /* Add padding-bottom for mobile safe area where nav sits */
+        @media (max-width: 767px) {
+            body {
+                padding-bottom: 4rem; /* h-16 */
+            }
+        }
+    </style>
+</body></html>

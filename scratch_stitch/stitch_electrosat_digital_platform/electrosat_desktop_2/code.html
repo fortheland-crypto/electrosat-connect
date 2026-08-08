@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ElectroSat - Видеонаблюдение</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#ffb59b",
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#f2f3ff",
+                      "tertiary": "#8e2d00",
+                      "on-secondary-fixed-variant": "#35466f",
+                      "surface-container-highest": "#e1e2ed",
+                      "surface": "#faf8ff",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed-variant": "#822800",
+                      "tertiary-fixed": "#ffdbcf",
+                      "on-primary-container": "#dfe4ff",
+                      "error": "#ba1a1a",
+                      "inverse-surface": "#2e3039",
+                      "inverse-on-surface": "#f0f0fc",
+                      "primary": "#0045b7",
+                      "tertiary-container": "#b73c00",
+                      "on-tertiary-fixed": "#380d00",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#00174a",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-container": "#bdceff",
+                      "primary-container": "#095be8",
+                      "on-surface-variant": "#424655",
+                      "primary-fixed-dim": "#b3c5ff",
+                      "on-primary": "#ffffff",
+                      "background": "#faf8ff",
+                      "surface-dim": "#d9d9e5",
+                      "outline": "#737686",
+                      "surface-container": "#ededf9",
+                      "secondary": "#4d5e88",
+                      "on-background": "#191b24",
+                      "on-primary-fixed-variant": "#003ea7",
+                      "surface-bright": "#faf8ff",
+                      "surface-variant": "#e1e2ed",
+                      "on-secondary-fixed": "#051a41",
+                      "on-tertiary-container": "#ffded3",
+                      "inverse-primary": "#b3c5ff",
+                      "secondary-fixed-dim": "#b4c6f6",
+                      "outline-variant": "#c3c6d7",
+                      "surface-tint": "#0053d9",
+                      "error-container": "#ffdad6",
+                      "on-surface": "#191b24",
+                      "primary-fixed": "#dbe1ff",
+                      "surface-container-high": "#e7e7f3",
+                      "secondary-fixed": "#d9e2ff",
+                      "on-secondary-container": "#465781"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px",
+                      "2xl": "1rem",
+                      "3xl": "1.5rem"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "margin-desktop": "64px",
+                      "section-gap": "80px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "card-padding": "24px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Manrope"
+                      ],
+                      "headline-lg": [
+                              "Sora"
+                      ],
+                      "headline-md": [
+                              "Sora"
+                      ],
+                      "body-lg": [
+                              "Manrope"
+                      ],
+                      "label-md": [
+                              "Manrope"
+                      ],
+                      "label-sm": [
+                              "Manrope"
+                      ],
+                      "display-lg-mobile": [
+                              "Sora"
+                      ],
+                      "display-lg": [
+                              "Sora"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .soft-shadow {
+            box-shadow: 0px 4px 20px rgba(15, 23, 42, 0.05);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 12px 30px rgba(15, 23, 42, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md shadow-sm w-full">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg font-bold text-on-background dark:text-surface-bright">
+                ElectroSat
+            </div>
+<nav class="hidden md:flex gap-2">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">Главная</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">О компании</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">Спутниковое ТВ</a>
+<a class="bg-primary-container text-on-primary-container rounded-full px-4 py-1.5 font-label-md text-label-md font-semibold scale-95 transition-transform" href="#">Видеонаблюдение</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">Каталог</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">Услуги</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 px-4 py-1.5 font-label-md text-label-md hover:bg-secondary-container/50 rounded-full" href="#">Контакты</a>
+</nav>
+<div class="hidden md:flex items-center gap-4 text-primary font-label-md text-label-md">
+                +7 747 123 45 67
+            </div>
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12 space-y-section-gap">
+<!-- Header Section -->
+<section class="space-y-6">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span>Главная</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-primary font-semibold">Видеонаблюдение</span>
+</div>
+<div class="max-w-3xl">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-4">
+                    Видеонаблюдение
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Проектирование, монтаж и настройка систем видеонаблюдения любой сложности.
+                </p>
+</div>
+<!-- Benefits -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+<div class="bg-surface-container-lowest p-6 rounded-2xl soft-shadow flex flex-col items-center text-center gap-3">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">smartphone</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Удалённый<br/>просмотр</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl soft-shadow flex flex-col items-center text-center gap-3">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">video_camera_back</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Запись 24/7<br/>на регистратор</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl soft-shadow flex flex-col items-center text-center gap-3">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">notifications_active</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Уведомления<br/>на телефон</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl soft-shadow flex flex-col items-center text-center gap-3">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Гарантия<br/>и поддержка</span>
+</div>
+</div>
+</section>
+<!-- Popular Packages -->
+<section class="space-y-8">
+<h2 class="font-headline-md text-headline-md text-on-background">Популярные комплекты</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Package 1 -->
+<div class="bg-surface-container-lowest rounded-2xl p-card-padding soft-shadow hover-lift flex flex-col h-full border border-surface-container">
+<div class="h-48 mb-6 flex items-center justify-center bg-surface-container rounded-xl overflow-hidden">
+<img class="object-cover w-full h-full mix-blend-multiply" data-alt="A modern, high-quality product shot of a 2-camera video surveillance kit. The image shows two sleek, white dome IP cameras and a black network video recorder (NVR) neatly arranged on a clean, light grey surface. The lighting is studio-quality, creating soft shadows and highlighting the premium plastic and metal finishes of the equipment. The style is modern, technical, and clean, fitting a professional electronics catalog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs9z0gyH_3RqJWexcLNEb9r2ZRqo_i5i70qZ7m4aN8junlxaeTXeYtZ5iDFtqsR4ZHubMihU-p5cZUe6trhPpRcQIHxE84WS5TJXQk3TfmgDoUHm5byUxiMWLeZltR7W7Q4wYC2GElgZSu5JBm9Uti_1LIRNrK7U1FdVvyeoelfDfFTFlLxyk7goJBY9FkzsxJOwrArza-4paxxRotIAjOU2jvRgsfF2spy4olcFTbu7bd6wa3yQoW"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-label-md text-label-md text-on-surface mb-2">Комплект на 2 камеры</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Оптимально для небольшого офиса или квартиры</p>
+</div>
+<div class="flex items-end justify-between mt-auto pt-4 border-t border-surface-variant">
+<div class="text-primary font-headline-md text-headline-md">от 65 000 ₸</div>
+</div>
+</div>
+<!-- Package 2 -->
+<div class="bg-surface-container-lowest rounded-2xl p-card-padding soft-shadow hover-lift flex flex-col h-full border border-surface-container">
+<div class="h-48 mb-6 flex items-center justify-center bg-surface-container rounded-xl overflow-hidden">
+<img class="object-cover w-full h-full mix-blend-multiply" data-alt="A premium product photograph of a 4-camera video surveillance package. Four white bullet-style IP cameras are positioned symmetrically around a central black NVR unit. The background is a seamless light slate color, providing a modern, airy aesthetic. The lighting is bright and evenly distributed, emphasizing the technical precision and reliable build quality of the security hardware." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqqGdRP6KOgXUBbE1IyPsBjx3Ir61XiT7cg6jzGySJqpFscdQ2yalc1ItGjfrfu1a4QV8ACtaFbMNjiUtE67_347NaE0wxI6qbS_bZuEaR-E7zwSlRLIg0H_tCZguLVSG3inci8RDmcpY2vxy0cngiXqwMjJc7nIXjy6CmQKaoI8Tcr5iHqP9MnWECHTUMl9JQnaWF1szP6nwyVVqK2LIDZXGGkx09zgoIojEGxQS0yqL-JmaNmf-A"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-label-md text-label-md text-on-surface mb-2">Комплект на 4 камеры</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Для частного дома или магазина</p>
+</div>
+<div class="flex items-end justify-between mt-auto pt-4 border-t border-surface-variant">
+<div class="text-primary font-headline-md text-headline-md">от 110 000 ₸</div>
+</div>
+</div>
+<!-- Package 3 -->
+<div class="bg-surface-container-lowest rounded-2xl p-card-padding soft-shadow hover-lift flex flex-col h-full border border-surface-container">
+<div class="h-48 mb-6 flex items-center justify-center bg-surface-container rounded-xl overflow-hidden">
+<img class="object-cover w-full h-full mix-blend-multiply" data-alt="A professional studio shot of a comprehensive 8-camera video surveillance system. The arrangement includes a mix of white dome and bullet cameras, a large multi-channel NVR, and a prominent hard drive unit. The setup is presented on a minimalist white background with soft, ambient lighting that gives the gear a high-tech, reliable appearance, perfectly suited for a modern corporate tech catalog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCepd_aQLghcRkCkVdODQV4da1nEHHE0y971J0B7gfKqrjSuOiAwuiFBMb104SaRpnnBI154HC145rmiiYsDeYYmiEsMCd_N6GGL2pm_iuIlj6YJFTT_lsCVokESfvg8ff4dkkdNAHh7ilKpveyrx2X-4hfjNgLKahB3Okwy_VfDIep1py_vZv8ao7mlZGQtRuPK1TpTSa2lwwii-q-pqjI2k3GyWi8KkmAe7ahGAsuttpcxi-EhWXA"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-label-md text-label-md text-on-surface mb-2">Комплект на 8 камер</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Для коммерческих объектов и складов</p>
+</div>
+<div class="flex items-end justify-between mt-auto pt-4 border-t border-surface-variant">
+<div class="text-primary font-headline-md text-headline-md">от 180 000 ₸</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Equipment Grid -->
+<section class="space-y-8">
+<div class="flex justify-between items-end">
+<h2 class="font-headline-md text-headline-md text-on-background">Оборудование</h2>
+<a class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1" href="#">
+                    Смотреть все <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Item 1 -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 soft-shadow hover-lift border border-surface-container flex flex-col group">
+<div class="h-32 mb-4 bg-surface rounded-lg flex items-center justify-center p-2">
+<img class="object-contain h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-300" data-alt="A close-up product image of a sleek white outdoor IP bullet camera. It features a visible lens and IR sensors, mounted on a small bracket. The background is pure white, emphasizing the clean lines and modern design of the security device. Studio lighting highlights the camera's weather-resistant housing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcft6cPSBSW2plFKkhAXOLvrYRGiIlhG5Qte_GbxGDjrhHWRc1akf5i1GAwE-ELXDnDdNH7vOSHCVaad-Ew-3Av2wdll0NhvmVS6RJ-yi826hdWQH8J_C1v9o2GKTow3ZAXCqU8fo1ohhbT5QojRTyMzHyXeZJjyroocut5Qb9cICw0Vu47q6_z7sJb10uQrZmiyNkfWffu4aOYyDIBCT6ndhk9gl46ZzsOjBFcRoQ6ihYt6EQKlkq"/>
+</div>
+<h4 class="font-label-sm text-label-sm text-on-surface mb-1">IP камера уличная</h4>
+<p class="font-body-md text-body-md text-primary font-semibold mt-auto">18 000 ₸</p>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 soft-shadow hover-lift border border-surface-container flex flex-col group">
+<div class="h-32 mb-4 bg-surface rounded-lg flex items-center justify-center p-2">
+<img class="object-contain h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-300" data-alt="A clean, isolated image of an indoor dome security camera. The camera has a glossy black lens cover surrounded by a matte white base. The lighting is soft and even, creating a high-fidelity tech catalog look. The camera sits against a bright, airy background, typical of modern glassmorphism-influenced design spaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDgiUKHiEQj4mE1Wn3zyM-HtlPRgjoCGYd_DuLBpBt9bGi8rSdLez2vOXRzvYGZkTYo7pkDnu-AvaqfABr9XCbYtlCqaRvxai0Y9qBe7oI9cYWjbgvGfEPoKutLWsPHIiJI-goA80yqHHHxmCyBIzDZrE0-jnj_E1DQTtZbZdfs1HbPyCpT55OGPqE1PoumDbGXYM2QMScWN1YYs0uaIxndH7WQzA6uxX_BrqrpYHK8g2E3i4ipnCV"/>
+</div>
+<h4 class="font-label-sm text-label-sm text-on-surface mb-1">IP камера внутренняя</h4>
+<p class="font-body-md text-body-md text-primary font-semibold mt-auto">16 000 ₸</p>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 soft-shadow hover-lift border border-surface-container flex flex-col group">
+<div class="h-32 mb-4 bg-surface rounded-lg flex items-center justify-center p-2">
+<img class="object-contain h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-300" data-alt="A professional top-down angled shot of a black 8-channel Network Video Recorder (NVR). The device has a minimalist front panel with a few indicator lights. It is set against a very subtle, light grey background with soft ambient shadows beneath it, giving it a grounded, premium feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCug0LxDOT5UGMhoXji7QoaShid2roSh4T_pp_XVoy742dLV2AKYjt-B7pDE5H7DmWQ3kVLgsj7HotGQppjzXiyWYoQS1NnjlSGK3PlA0QncdDaq7eAZBn8PlCMjqPOrL6njxMUluE12kRT1n1XeTF7k5-eF1UY1HXFKRwpfSl8EeA_LiNKcC0CfJmZljMjXFWgBSMQDdoRjx3pdfi9huKpLtMmbzgUZCCQBcwqgkLhHZ8lhA9Jamy-"/>
+</div>
+<h4 class="font-label-sm text-label-sm text-on-surface mb-1">Видеорегистратор 8ch</h4>
+<p class="font-body-md text-body-md text-primary font-semibold mt-auto">45 000 ₸</p>
+</div>
+<!-- Item 4 -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 soft-shadow hover-lift border border-surface-container flex flex-col group">
+<div class="h-32 mb-4 bg-surface rounded-lg flex items-center justify-center p-2">
+<img class="object-contain h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-300" data-alt="A high-resolution image of a 1TB internal hard disk drive intended for surveillance systems. The metallic casing reflects light sharply, emphasizing its technical nature. The background is a crisp white, ensuring the component looks clean, reliable, and ready for installation in a high-tech environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvQThbLTN18RSt6Z3dg6ZcIDNDG0t7QY2Nl_3ooVXu8z0kh2wbVI5UW3sFq82yeFRz_NbbOtAd4NxAH3IeHqQkOKvuNyiS0tnhj2i3Z0may50Jnwk7fErR-VCEwf3lWQezOPRm6MRPtRu2zywe5009DtG84VWw5-Uwtxmo16jXdW6XwssUM2Gia4J52baT1-qo7x9hOSYRv85Ym7BtTvyS-_MztwYixGpRRSepcBjX6jMi4B7d38Nn"/>
+</div>
+<h4 class="font-label-sm text-label-sm text-on-surface mb-1">Жёсткий диск 1TB</h4>
+<p class="font-body-md text-body-md text-primary font-semibold mt-auto">23 000 ₸</p>
+</div>
+</div>
+</section>
+<!-- CTA Banner -->
+<section class="bg-primary rounded-3xl p-8 md:p-12 text-on-primary flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+<!-- Decorative Background Elements -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-48 h-48 bg-black opacity-10 rounded-full blur-2xl transform -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+<div class="z-10 max-w-xl">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4">Бесплатный выезд и замер</h2>
+<p class="font-body-lg text-body-lg text-on-primary/80">
+                    Подберём оптимальное решение для вашего объекта, составим смету и проконсультируем по всем вопросам.
+                </p>
+</div>
+<div class="z-10 shrink-0 w-full md:w-auto">
+<button class="w-full md:w-auto bg-[#16C85B] text-white font-label-md text-label-md px-8 py-4 rounded-full flex items-center justify-center gap-2 hover:bg-[#14b351] transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform duration-200">
+<span class="material-symbols-outlined">support_agent</span>
+                    Вызвать мастера
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest mt-auto border-t border-surface-variant">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-8 max-w-container-max mx-auto gap-6">
+<div class="font-headline-md font-bold text-on-surface">
+                ElectroSat
+            </div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md hover:underline underline-offset-4" href="#">О компании</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md hover:underline underline-offset-4" href="#">Услуги</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md hover:underline underline-offset-4" href="#">Доставка и оплата</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md hover:underline underline-offset-4" href="#">Гарантия</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md hover:underline underline-offset-4" href="#">Контакты</a>
+</nav>
+<div class="text-on-surface-variant font-body-md text-body-md text-sm text-center md:text-right">
+                © 2024 ElectroSat. Все права защищены.
+            </div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 bg-surface-container-highest dark:bg-surface-container-low z-50 rounded-t-xl md:hidden shadow-2xl border-t border-outline-variant/30">
+<button class="flex flex-col items-center justify-center text-on-surface-variant w-full h-full active:bg-surface-container-high tap:scale-90 transition-all">
+<span class="material-symbols-outlined mb-1">chat</span>
+<span class="font-label-sm text-label-sm">WhatsApp</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant w-full h-full active:bg-surface-container-high tap:scale-90 transition-all border-l border-surface-variant">
+<span class="material-symbols-outlined mb-1">call</span>
+<span class="font-label-sm text-label-sm">Позвонить</span>
+</button>
+</nav>
+</body></html>
